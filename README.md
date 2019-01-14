@@ -195,6 +195,23 @@ recyclerView.removeRibbon(2);
 recyclerView.clear();
 ```
 
+
+## RibbonView Attributes
+Attributes | Type | Default | Description
+--- | --- | --- | ---
+ribbonBackgroundColor | Color | #e254ff | sets ribbon background using color.
+ribbonRadius | Float | 10f | sets ribbon corner's radius. It's only active using with `ribbonBackgroundColor`.
+ribbonDrawable | Drawable | null | sets ribbon background using drawable. `ribbonBackgroundColor` and `ribbonRadius` will be ignored.
+ribbonRotation | Int | 0 | sets ribbon rotation. Only between 1 to 90 or -90 to -1 degree.
+paddingLeft | Float | 8f | sets left padding of the text.
+paddingTop | Float | 4f | sets top padding of the text.
+paddingRight | Float | 8f | sets right padding of the text.
+paddingBottom | Float | 4f | sets bottom padding of the text.
+text | String | "" | sets text. It is same as `android:text` attribute.
+textColor | Color | Color.WHITE | sets text color. It is same as `android:textColor` attribute.
+textSize | Float | 12f | sets text size. It is same as `android:textSize` attribute.
+textStyle | Int | Typeface.NORMAL | sets text style. It is same as `android:textStyle` attribute.
+
 # License
 ```xml
 Copyright 2019 skydoves
