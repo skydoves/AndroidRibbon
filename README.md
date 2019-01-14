@@ -1,5 +1,7 @@
 # AndroidRibbon
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16) <br>
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
+[![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16) 
+[![Build Status](https://travis-ci.org/skydoves/AndroidRibbon.svg?branch=master)](https://travis-ci.org/skydoves/AndroidRibbon)<br>
 A library that lets you implement ribbon ui and shimmer animation easily. <br>
 
 ![gif0](https://user-images.githubusercontent.com/24237865/51105497-7873e680-182c-11e9-954a-1bf767d15312.gif) ![gif1](https://user-images.githubusercontent.com/24237865/51105671-fb953c80-182c-11e9-8288-7ce97d5474e8.gif)
