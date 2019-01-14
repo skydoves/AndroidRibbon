@@ -1,0 +1,11 @@
+apply plugin: 'com.novoda.bintray-release'
+publish {
+    userOrg = 'devmagician'
+    groupId = 'com.github.skydoves'
+    artifactId = 'androidribbon'
+    publishVersion = '1.0.0'
+    desc = 'This is AndroidRibbon by skydoves'
+    website = 'https://github.com/skydoves/AndroidRibbon'
+    issueTracker = "${website}/issues"
+    repository = "${website}.git"
+}

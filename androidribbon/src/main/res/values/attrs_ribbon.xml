@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RibbonView">
+        <attr name="ribbon_drawable" format="reference"/>
+        <attr name="ribbon_background_color" format="color"/>
+        <attr name="ribbon_ribbonRadius" format="dimension"/>
+        <attr name="ribbon_rotation" format="integer"/>
+        <attr name="ribbon_padding_left" format="dimension"/>
+        <attr name="ribbon_padding_top" format="dimension"/>
+        <attr name="ribbon_padding_right" format="dimension"/>
+        <attr name="ribbon_padding_bottom" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="RibbonRecyclerView">
+        <attr name="ribbon_recycler_space" format="dimension"/>
+        <attr name="ribbon_recycler_orientation" format="enum">
+            <enum name="vertical" value="0"/>
+            <enum name="horizontal" value="1"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="ShimmerRibbonView">
+        <attr name="shimmer_ribbon_text" format="string"/>
+        <attr name="shimmer_ribbon_textColor" format="color"/>
+        <attr name="shimmer_ribbon_textSize" format="dimension"/>
+        <attr name="shimmer_ribbon_textStyle" format="enum">
+            <enum name="bold" value="0"/>
+            <enum name="italic" value="1"/>
+        </attr>
+        <attr name="shimmer_ribbon_drawable" format="reference"/>
+        <attr name="shimmer_ribbon_background_color" format="color"/>
+        <attr name="shimmer_ribbon_ribbonRadius" format="dimension"/>
+        <attr name="shimmer_ribbon_rotation" format="integer"/>
+        <attr name="shimmer_ribbon_padding_left" format="dimension"/>
+        <attr name="shimmer_ribbon_padding_top" format="dimension"/>
+        <attr name="shimmer_ribbon_padding_right" format="dimension"/>
+        <attr name="shimmer_ribbon_padding_bottom" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="RibbonLayout">
+        <attr name="ribbonLayout_header_align" format="enum">
+            <enum name="left" value="8388611"/>
+            <enum name="right" value="8388613"/>
+            <enum name="center" value="17"/>
+        </attr>
+        <attr name="ribbonLayout_bottom_align" format="enum">
+            <enum name="left" value="8388611"/>
+            <enum name="right" value="8388613"/>
+            <enum name="center" value="17"/>
+        </attr>
+    </declare-styleable>
+</resources>

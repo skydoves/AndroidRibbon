@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/mainlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+        <com.skydoves.androidribbon.RibbonLayout
+                android:id="@+id/ribbonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ribbonLayout_header_align="left"
+                app:ribbonLayout_bottom_align="right">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foreground="?attr/selectableItemBackground">
+
+                <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        app:cardElevation="6dp"
+                        app:cardCornerRadius="10dp">
+
+                    <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp"
+                            android:src="@drawable/background01"
+                            android:scaleType="fitXY"/>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </com.skydoves.androidribbon.RibbonLayout>
+
+        <com.skydoves.androidribbon.RibbonLayout
+                android:id="@+id/ribbonLayout01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ribbonLayout_header_align="left"
+                app:ribbonLayout_bottom_align="center">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardElevation="6dp"
+                        app:cardCornerRadius="10dp">
+
+                    <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp"
+                            android:src="@drawable/background02"
+                            android:scaleType="fitXY"/>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </com.skydoves.androidribbon.RibbonLayout>
+
+        <com.skydoves.androidribbon.RibbonLayout
+                android:id="@+id/ribbonLayout02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ribbonLayout_header_align="right"
+                app:ribbonLayout_bottom_align="left">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardElevation="6dp"
+                        app:cardCornerRadius="10dp">
+
+                    <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp"
+                            android:src="@drawable/background03"
+                            android:scaleType="fitXY"/>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </com.skydoves.androidribbon.RibbonLayout>
+    </LinearLayout>
+</ScrollView>
