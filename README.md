@@ -1,5 +1,5 @@
 # AndroidRibbon
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16) <br>
 A library that lets you implement ribbon ui and shimmer animation. <br>
 
 ![gif0](https://user-images.githubusercontent.com/24237865/51105497-7873e680-182c-11e9-954a-1bf767d15312.gif) ![gif1](https://user-images.githubusercontent.com/24237865/51105671-fb953c80-182c-11e9-8288-7ce97d5474e8.gif)
@@ -131,20 +131,66 @@ This is how to create `Shimmer` instance using kotlin dsl.
 ```kotlin
 val shimmer_alpha = alphaShimmer {
       setBaseAlpha(1.0f)
-      (0.5f)
+      setHighlightAlpha(0.5f)
 }
 val shimmer_color = colorShimmer {
-      setBaseColor(ContextCompat.getColor(context, R.color.colorPrimary))
-      setHighlightColor(ContextCompat.getColor(context, R.color.colorPrimaryDark))
       setBaseAlpha(1.0f)
       setHighlightAlpha(0.5f)
+      setBaseColor(ContextCompat.getColor(context, R.color.colorPrimary))
+      setHighlightColor(ContextCompat.getColor(context, R.color.colorPrimaryDark))
 }
 ```
 
 ## ShimmerLayout
 ShimmerLayout lets RibbonViews overlap with other child views.
 
+### RibbonView in layout
+```gradle
+<com.skydoves.androidribbon.RibbonLayout
+      android:id="@+id/ribbonLayout01"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:ribbonLayout_header_align="left"
+      app:ribbonLayout_bottom_align="center">
 
+     <ImageView
+          android:layout_width="match_parent"
+          android:layout_height="180dp"
+          android:src="@drawable/background02"
+          android:scaleType="fitXY"/>
+</com.skydoves.androidribbon.RibbonLayout>
+```
+
+And should set `ribbonHeader` or `ribbonBottom` using `RibbonView` or `ShimmerRibbonView` instance.
+```java
+ribbonLayout.setRibbonHeader(ribbon_header);
+ribbonLayout.setRibbonBottomAlign(Gravity.LEFT);
+ribbonLayout.setRibbonBottom(ribbon_bottom);
+ribbonLayout.setRibbonBottomAlign(Gravity.RIGHT);
+```
+
+## RibbonRecyclerView
+RibbonRecyclerView lets you implement RecyclerView has Ribbon items easily.
+
+### RibbonView in layout
+```gradle
+<com.skydoves.androidribbon.RibbonRecyclerView
+      android:id="@+id/ribbonRecyclerView"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="15dp"
+      app:ribbon_recycler_space="3dp"/>
+```
+
+### Add or remove `RibbonView` items.
+```java
+recyclerView.addRibbon(ribbonView);
+recyclerView.addRibbon(2, ribbonView);
+recyclerView.addRibbonList(ribbonViewList);
+recyclerView.removeRibbon(ribbonView);
+recyclerView.removeRibbon(2);
+recyclerView.clear();
+```
 
 # License
 ```xml
