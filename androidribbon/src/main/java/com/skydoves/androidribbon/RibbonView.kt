@@ -169,9 +169,11 @@ class RibbonView : AppCompatTextView, RibbonInterface {
         ribbonDrawable?.let {
             background = ribbonDrawable
         } ?: let {
-            val bgShape = background as GradientDrawable
-            bgShape.cornerRadius = ribbonRadius.dp2px(resources).toFloat()
-            bgShape.setColor(ribbonBackgroundColor)
+            if(background is GradientDrawable) {
+                val bgShape = background as GradientDrawable
+                bgShape.cornerRadius = ribbonRadius.dp2px(resources).toFloat()
+                bgShape.setColor(ribbonBackgroundColor)
+            }
         }
     }
 

@@ -6,6 +6,9 @@ buildscript {
         cardView_version = '1.0.0'
         baseAdapter_version = '0.1.2'
         shimmer_version = '0.3.0'
+        spotless_version = '3.16.0'
+        dokka_version = '0.9.17'
+        bintray_version = '0.9'
     }
     repositories {
         google()
@@ -14,8 +17,9 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:3.3.0"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "com.diffplug.spotless:spotless-plugin-gradle:3.16.0"
-        classpath "com.novoda:bintray-release:0.9"
+        classpath "com.diffplug.spotless:spotless-plugin-gradle:$spotless_version"
+        classpath "org.jetbrains.dokka:dokka-android-gradle-plugin:$dokka_version"
+        classpath "com.novoda:bintray-release:$bintray_version"
     }
 }
 
@@ -28,4 +32,9 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+task dokkaJavadoc(type: org.jetbrains.dokka.gradle.DokkaTask) {
+    outputFormat = 'javadoc'
+    outputDirectory = "$buildDir/javadoc"
 }

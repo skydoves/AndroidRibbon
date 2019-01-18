@@ -20,13 +20,16 @@ import android.view.View
 import android.widget.LinearLayout
 import com.skydoves.baserecyclerviewadapter.BaseViewHolder
 
+/** RibbonRecyclerAdapter is an implementation of [BaseViewHolder] that has [RibbonView] as data. */
 @Suppress("CanBeParameter")
-class RibbonRecyclerHolder(
+class RibbonRecyclerViewHolder(
     private val view: View,
     private val delegate: Delegate? = null
 ) : BaseViewHolder(view) {
 
+    /** Delegate is delegate interface for communicating with view. */
     interface Delegate {
+        /** onRibbonItemClick will invoked by [onClick] method. */
         fun onRibbonItemClick(ribbonView: RibbonView)
     }
 
