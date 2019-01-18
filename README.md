@@ -213,6 +213,20 @@ textColor | Color | Color.WHITE | sets text color. It is same as `android:textCo
 textSize | Float | 12f | sets text size. It is same as `android:textSize` attribute.
 textStyle | Int | Typeface.NORMAL | sets text style. It is same as `android:textStyle` attribute.
 
+## ShimmerRibbonView Attributes
+Attributes | Type | Default | Description
+--- | --- | --- | ---
+ribbon | RibbonView | RibbonView(context) | sets `RibbonView` on the frame.
+shimmer | Shimmer | AlphaHighlightBuilder(context).build() | sets `Shimmer` on the frame.
+
+## ShimmerLayout Attributes
+Attributes | Type | Default | Description
+--- | --- | --- | ---
+ribbonHeader | RibbonView | RibbonView(context) | sets header `RibbonView` on the frame.
+ribbonBottom | RibbonView | RibbonView(context) | sets bottom `RibbonView` on the frame.
+ribbonHeaderAlign | Gravity | Gravity.START | sets an align of the header ribbon.
+ribbonBottomAlign | Gravity | Gravity.CENTER | sets an align of the bottom ribbon.
+
 # License
 ```xml
 Copyright 2019 skydoves
