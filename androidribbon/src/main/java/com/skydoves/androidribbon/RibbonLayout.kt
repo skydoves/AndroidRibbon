@@ -24,6 +24,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 
+/**
+ * RibbonLayout has header and bottom align ribbons.
+ * They will overlap on the top with other complex child views.
+ */
 @Suppress("MemberVisibilityCanBePrivate", "HasPlatformType", "unused")
 class RibbonLayout : FrameLayout, RibbonInterface {
 
@@ -100,7 +104,6 @@ class RibbonLayout : FrameLayout, RibbonInterface {
         invalidate()
     }
 
-    /** add a [RibbonView] or [ShimmerRibbonView]. */
     private fun addRibbonInterface(ribbonInterface: RibbonInterface, params: FrameLayout.LayoutParams) {
         ribbonInterface.apply {
             if (this is RibbonView) {
@@ -113,7 +116,6 @@ class RibbonLayout : FrameLayout, RibbonInterface {
         }
     }
 
-    /** removes an original view and adds a new view. */
     private fun addRibbonView(view: View) {
         removeView(view)
         addView(view)

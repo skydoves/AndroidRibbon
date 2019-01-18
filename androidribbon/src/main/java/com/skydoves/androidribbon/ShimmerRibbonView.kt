@@ -39,6 +39,7 @@ fun colorShimmer(block: Shimmer.ColorHighlightBuilder.() -> Unit): Shimmer =
 fun shimmerRibbonView(context: Context, block: ShimmerRibbonView.Builder.() -> Unit): ShimmerRibbonView =
     ShimmerRibbonView.Builder(context).apply(block).build()
 
+/** ShimmerRibbonView implements [RibbonView] on [ShimmerFrameLayout] for shimmering effect.  */
 @Suppress("unused", "MemberVisibilityCanBePrivate", "HasPlatformType")
 class ShimmerRibbonView : ShimmerFrameLayout, RibbonInterface {
 
@@ -117,7 +118,6 @@ class ShimmerRibbonView : ShimmerFrameLayout, RibbonInterface {
         frameRotation = typeArray.getInt(R.styleable.ShimmerRibbonView_shimmer_ribbon_rotation, frameRotation)
     }
 
-    /** initialize attributes by [ShimmerRibbonView.Builder] */
     private fun onCreateByBuilder(builder: ShimmerRibbonView.Builder) {
         ribbon = builder.ribbon
         shimmer = builder.shimmer
@@ -147,8 +147,11 @@ class ShimmerRibbonView : ShimmerFrameLayout, RibbonInterface {
         @JvmField var ribbon = RibbonView(context)
         @JvmField var shimmer = Shimmer.AlphaHighlightBuilder().setBaseAlpha(1.0f).setHighlightAlpha(0.5f).build()
 
+        /** sets [RibbonView] on builder. */
         fun setRibbonView(ribbonView: RibbonView) = apply { this.ribbon = ribbonView }
+        /** sets [Shimmer] on builder. */
         fun setShimmer(shimmer: Shimmer) = apply { this.shimmer = shimmer }
+        /** assembles builder's attributes and returns [ShimmerRibbonView]. */
         fun build(): ShimmerRibbonView {
             val shimmerRibbon = ShimmerRibbonView(context)
             shimmerRibbon.onCreateByBuilder(this)

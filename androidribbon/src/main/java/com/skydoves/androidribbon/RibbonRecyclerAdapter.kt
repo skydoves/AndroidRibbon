@@ -21,6 +21,7 @@ import com.skydoves.baserecyclerviewadapter.BaseAdapter
 import com.skydoves.baserecyclerviewadapter.BaseViewHolder
 import com.skydoves.baserecyclerviewadapter.SectionRow
 
+/** RibbonRecyclerAdapter is an implementation of [BaseAdapter] that has [RibbonView] as items. */
 class RibbonRecyclerAdapter(private val delegate: RibbonRecyclerHolder.Delegate? = null) : BaseAdapter(), IRibbonList {
 
     init {
@@ -54,7 +55,9 @@ class RibbonRecyclerAdapter(private val delegate: RibbonRecyclerHolder.Delegate?
     override fun getRibbonViews(): List<RibbonView> {
         val ribbonList = ArrayList<RibbonView>()
         for (item in sections[0]) {
-            ribbonList.add(item as RibbonView)
+            if (item is RibbonView) {
+                ribbonList.add(item)
+            }
         }
         return ribbonList
     }

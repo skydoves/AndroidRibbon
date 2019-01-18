@@ -23,6 +23,7 @@ import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
+/** RibbonRecyclerView helps to create [RecyclerView] that has [RibbonView] as items. */
 @Suppress("LiftReturnOrAssignment")
 class RibbonRecyclerView : RecyclerView, IRibbonList {
 

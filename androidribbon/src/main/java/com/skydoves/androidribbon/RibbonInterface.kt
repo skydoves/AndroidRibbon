@@ -16,7 +16,9 @@
 
 package com.skydoves.androidribbon
 
+/** RibbonInterface is an interface for implementation of Ribbon views. */
 @Suppress("unused")
 interface RibbonInterface {
+    /** update ribbon views related to complex ui/ux things. */
     fun updateRibbon()
 }
