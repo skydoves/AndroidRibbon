@@ -34,6 +34,7 @@ import androidx.core.content.ContextCompat
 fun ribbonView(context: Context, block: RibbonView.Builder.() -> Unit): RibbonView =
     RibbonView.Builder(context).apply(block).build()
 
+/** RibbonView is advanced of [AppCompatTextView] for implement ribbon. */
 @Suppress("unused", "MemberVisibilityCanBePrivate")
 class RibbonView : AppCompatTextView, RibbonInterface {
 

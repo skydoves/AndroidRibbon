@@ -39,7 +39,7 @@ fun colorShimmer(block: Shimmer.ColorHighlightBuilder.() -> Unit): Shimmer =
 fun shimmerRibbonView(context: Context, block: ShimmerRibbonView.Builder.() -> Unit): ShimmerRibbonView =
     ShimmerRibbonView.Builder(context).apply(block).build()
 
-/** ShimmerRibbonView implements [RibbonView] on [ShimmerFrameLayout] for shimmering effect.  */
+/** ShimmerRibbonView implements [RibbonView] on [ShimmerFrameLayout] for shimmering effect. */
 @Suppress("unused", "MemberVisibilityCanBePrivate", "HasPlatformType")
 class ShimmerRibbonView : ShimmerFrameLayout, RibbonInterface {
 
