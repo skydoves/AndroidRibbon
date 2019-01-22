@@ -22,6 +22,12 @@ dependencies {
     api "com.facebook.shimmer:shimmer:$shimmer_version"
 }
 
+dokka {
+    moduleName = 'androidribbon'
+    outputFormat = 'html'
+    outputDirectory = "$buildDir/javadoc"
+}
+
 tasks.withType(Javadoc) {
     excludes = ['**/*.kt']
     options.addBooleanOption('Xdoclint:none', true)

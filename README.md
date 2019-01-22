@@ -3,8 +3,8 @@
 [![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/feb143f9abec414a83d1ea4ec928359b)](https://www.codacy.com/app/skydoves/AndroidRibbon?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=skydoves/AndroidRibbon&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://travis-ci.org/skydoves/AndroidRibbon.svg?branch=master)](https://travis-ci.org/skydoves/AndroidRibbon) 
-[中文語](https://github.com/skydoves/AndroidRibbon/tree/master/.github/README_CHINESE.md) <br>
-A library that lets you implement ribbon ui and shimmer animation easily.<br>
+[![JavaDoc](https://img.shields.io/badge/Javadoc-AndroidRibbon-yellow.svg)](https://skydoves.github.io/libraries/androidribbon/javadoc/androidribbon/) <br>
+Beautiful and the simplest ribbon view with shimmering effect. [中文語](https://github.com/skydoves/AndroidRibbon/tree/master/.github/README_CHINESE.md) <br>
 
 ![gif0](https://user-images.githubusercontent.com/24237865/51105497-7873e680-182c-11e9-954a-1bf767d15312.gif) ![gif1](https://user-images.githubusercontent.com/24237865/51105671-fb953c80-182c-11e9-8288-7ce97d5474e8.gif)
 
