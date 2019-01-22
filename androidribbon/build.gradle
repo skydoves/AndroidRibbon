@@ -1,25 +1,26 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'org.jetbrains.dokka-android'
+apply from: '../dependencies.gradle'
 apply from: '../publish.gradle'
 
 android {
     compileSdkVersion 28
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.compileSdk
+        versionCode versions.versionCode
+        versionName versions.versionName
     }
 }
 
 dependencies {
-    implementation "androidx.appcompat:appcompat:$accompat_version"
-    implementation "androidx.recyclerview:recyclerview:$recyclerView_version"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "com.github.skydoves:baserecyclerviewadapter:$baseAdapter_version"
-    api "com.facebook.shimmer:shimmer:$shimmer_version"
+    implementation "androidx.appcompat:appcompat:$versions.androidxAppcompat"
+    implementation "androidx.recyclerview:recyclerview:$versions.recyclerView"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+    implementation "com.github.skydoves:baserecyclerviewadapter:$versions.baseAdapter"
+    api "com.facebook.shimmer:shimmer:$versions.shimmer"
 }
 
 dokka {

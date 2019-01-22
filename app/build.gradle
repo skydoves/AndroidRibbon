@@ -1,15 +1,16 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply from: '../dependencies.gradle'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion versions.compileSdk
     defaultConfig {
         applicationId "com.skydoves.androidribbondemo"
-        minSdkVersion 16
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.compileSdk
+        versionCode versions.versionCode
+        versionName versions.versionName
     }
     buildTypes {
         release {
@@ -24,9 +25,9 @@ android {
 }
 
 dependencies {
-    implementation "androidx.appcompat:appcompat:$accompat_version"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "androidx.recyclerview:recyclerview:$recyclerView_version"
-    implementation "androidx.cardview:cardview:$cardView_version"
+    implementation "androidx.appcompat:appcompat:$versions.androidxAppcompat"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+    implementation "androidx.recyclerview:recyclerview:$versions.recyclerView"
+    implementation "androidx.cardview:cardview:$versions.cardView"
     implementation project(":androidribbon")
 }
