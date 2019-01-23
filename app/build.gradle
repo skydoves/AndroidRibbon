@@ -31,3 +31,5 @@ dependencies {
     implementation "androidx.cardview:cardview:$versions.cardView"
     implementation project(":androidribbon")
 }
+
+apply from: '../spotless.gradle'

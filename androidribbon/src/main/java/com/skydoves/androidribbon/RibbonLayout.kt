@@ -93,11 +93,13 @@ class RibbonLayout : FrameLayout, RibbonInterface {
 
     /** update [RibbonLayout] by attributes. */
     override fun updateRibbon() {
-        val headerParams = FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        val headerParams =
+            FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         headerParams.gravity = ribbonHeaderAlign or Gravity.TOP
         addRibbonInterface(ribbonHeader, headerParams)
 
-        val bottomParams = FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        val bottomParams =
+            FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         bottomParams.gravity = ribbonBottomAlign or Gravity.BOTTOM
         addRibbonInterface(ribbonBottom, bottomParams)
 

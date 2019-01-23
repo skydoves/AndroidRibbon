@@ -107,7 +107,8 @@ class ShimmerRibbonView : ShimmerFrameLayout, RibbonInterface {
         }.apply {
             text = typeArray.getString(R.styleable.ShimmerRibbonView_shimmer_ribbon_text)
             setTextColor(typeArray.getColor(R.styleable.ShimmerRibbonView_shimmer_ribbon_textColor, Color.WHITE))
-            textSize = typeArray.getDimensionPixelSize(R.styleable.ShimmerRibbonView_shimmer_ribbon_textSize, 12).toFloat()
+            textSize =
+                    typeArray.getDimensionPixelSize(R.styleable.ShimmerRibbonView_shimmer_ribbon_textSize, 12).toFloat()
 
             val typeface = typeArray.getInteger(R.styleable.ShimmerRibbonView_shimmer_ribbon_textStyle, 0)
             when (typeface) {
@@ -144,13 +145,17 @@ class ShimmerRibbonView : ShimmerFrameLayout, RibbonInterface {
 
     /** [ShimmerRibbonView] builder class. */
     class Builder(val context: Context) {
-        @JvmField var ribbon = RibbonView(context)
-        @JvmField var shimmer = Shimmer.AlphaHighlightBuilder().setBaseAlpha(1.0f).setHighlightAlpha(0.5f).build()
+        @JvmField
+        var ribbon = RibbonView(context)
+        @JvmField
+        var shimmer = Shimmer.AlphaHighlightBuilder().setBaseAlpha(1.0f).setHighlightAlpha(0.5f).build()
 
         /** sets [RibbonView] on builder. */
         fun setRibbonView(ribbonView: RibbonView) = apply { this.ribbon = ribbonView }
+
         /** sets [Shimmer] on builder. */
         fun setShimmer(shimmer: Shimmer) = apply { this.shimmer = shimmer }
+
         /** assembles builder's attributes and returns [ShimmerRibbonView]. */
         fun build(): ShimmerRibbonView {
             val shimmerRibbon = ShimmerRibbonView(context)

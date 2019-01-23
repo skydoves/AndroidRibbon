@@ -170,7 +170,7 @@ class RibbonView : AppCompatTextView, RibbonInterface {
         ribbonDrawable?.let {
             background = ribbonDrawable
         } ?: let {
-            if(background is GradientDrawable) {
+            if (background is GradientDrawable) {
                 val bgShape = background as GradientDrawable
                 bgShape.cornerRadius = ribbonRadius.dp2px(resources).toFloat()
                 bgShape.setColor(ribbonBackgroundColor)
@@ -186,21 +186,35 @@ class RibbonView : AppCompatTextView, RibbonInterface {
     /** [RibbonView] builder class. */
     class Builder(val context: Context) {
         @DrawableRes
-        @JvmField var ribbonDrawable: Drawable? = null
+        @JvmField
+        var ribbonDrawable: Drawable? = null
         @ColorInt
-        @JvmField var ribbonBackgroundColor = ContextCompat.getColor(context, R.color.bright_lavender)
-        @JvmField var ribbonRotation = 0
-        @JvmField var ribbonRadius = 10f
-        @JvmField var paddingLeft = 8f
-        @JvmField var paddingTop = 4f
-        @JvmField var paddingRight = 8f
-        @JvmField var paddingBottom = 4f
-        @JvmField var text = ""
-        @JvmField var textColor = Color.WHITE
-        @JvmField var textSize = 12f
-        @JvmField var textStyle = Typeface.NORMAL
+        @JvmField
+        var ribbonBackgroundColor = ContextCompat.getColor(context, R.color.bright_lavender)
+        @JvmField
+        var ribbonRotation = 0
+        @JvmField
+        var ribbonRadius = 10f
+        @JvmField
+        var paddingLeft = 8f
+        @JvmField
+        var paddingTop = 4f
+        @JvmField
+        var paddingRight = 8f
+        @JvmField
+        var paddingBottom = 4f
+        @JvmField
+        var text = ""
+        @JvmField
+        var textColor = Color.WHITE
+        @JvmField
+        var textSize = 12f
+        @JvmField
+        var textStyle = Typeface.NORMAL
 
-        fun setRibbonDrawable(@DrawableRes RibbonDrawable: Drawable?): Builder = apply { this.ribbonDrawable = RibbonDrawable }
+        fun setRibbonDrawable(@DrawableRes RibbonDrawable: Drawable?): Builder =
+            apply { this.ribbonDrawable = RibbonDrawable }
+
         fun setRibbonBackgroundColor(@ColorInt color: Int): Builder = apply { this.ribbonBackgroundColor = color }
         fun setRibbonRotation(value: Int): Builder = apply { this.ribbonRotation = value }
         fun setRibbonRadius(value: Float): Builder = apply { this.ribbonRadius = value }
