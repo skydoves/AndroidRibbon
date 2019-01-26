@@ -9,6 +9,8 @@ Beautiful and the simplest ribbon view with shimmering effect. [中文語](https
 ![gif0](https://user-images.githubusercontent.com/24237865/51105497-7873e680-182c-11e9-954a-1bf767d15312.gif) ![gif1](https://user-images.githubusercontent.com/24237865/51105671-fb953c80-182c-11e9-8288-7ce97d5474e8.gif)
 
 ## Download
+[![Download](https://api.bintray.com/packages/devmagician/maven/androidribbon/images/download.svg) ](https://bintray.com/devmagician/maven/androidribbon/_latestVersion)
+[![Jitpack](https://jitpack.io/v/skydoves/AndroidRibbon.svg)](https://jitpack.io/#skydoves/AndroidRibbon)
 ### Gradle
 And add a dependency code to your **module**'s `build.gradle` file.
 ```gradle
