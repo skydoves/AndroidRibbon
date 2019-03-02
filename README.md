@@ -230,6 +230,9 @@ ribbonBottom | RibbonView | RibbonView(context) | sets bottom `RibbonView` on th
 ribbonHeaderAlign | Gravity | Gravity.START | sets an align of the header ribbon.
 ribbonBottomAlign | Gravity | Gravity.CENTER | sets an align of the bottom ribbon.
 
+## Find this library useful? :heart:
+Support it by joining __[stargazers](https://github.com/skydoves/ElasticViews/stargazers)__ for this repository. :star:
+
 # License
 ```xml
 Copyright 2019 skydoves
