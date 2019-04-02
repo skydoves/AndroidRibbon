@@ -114,6 +114,6 @@ class RibbonRecyclerView : RecyclerView, IRibbonList {
 
     /** clear adapter. */
     override fun clear() {
-        ribbonAdapter.clearSections()
+        ribbonAdapter.clearAllSections()
     }
 }

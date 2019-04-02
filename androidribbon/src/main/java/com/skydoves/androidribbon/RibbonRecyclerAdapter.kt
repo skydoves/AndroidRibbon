@@ -38,25 +38,25 @@ class RibbonRecyclerAdapter(private val delegate: RibbonRecyclerViewHolder.Deleg
 
     /** add a ribbon on the adapter by position. */
     override fun addRibbon(position: Int, ribbonView: RibbonView) {
-        sections[0].add(position, ribbonView)
+        sections()[0].add(position, ribbonView)
         notifyItemChanged(position)
     }
 
     /** add ribbons on the adapter. */
     override fun addRibbonList(ribbonViewList: List<RibbonView>) {
-        addItemsOnSection(0, ribbonViewList)
+        addItemListOnSection(0, ribbonViewList)
         notifyDataSetChanged()
     }
 
     /** get a ribbon from the adapter. */
     override fun getRibbonView(position: Int): RibbonView {
-        return sections[0][position] as RibbonView
+        return sections()[0][position] as RibbonView
     }
 
     /** add ribbon from the adapter. */
     override fun getRibbonViews(): List<RibbonView> {
         val ribbonList = ArrayList<RibbonView>()
-        for (item in sections[0]) {
+        for (item in sections()[0]) {
             if (item is RibbonView) {
                 ribbonList.add(item)
             }
@@ -66,19 +66,19 @@ class RibbonRecyclerAdapter(private val delegate: RibbonRecyclerViewHolder.Deleg
 
     /** remove a ribbon on the adapter. */
     override fun removeRibbon(ribbonView: RibbonView) {
-        sections[0].remove(ribbonView)
+        sections()[0].remove(ribbonView)
         notifyDataSetChanged()
     }
 
     /** remove a ribbon on the adapter by position. */
     override fun removeRibbon(position: Int) {
-        sections[0].removeAt(position)
+        sections()[0].removeAt(position)
         notifyItemChanged(position)
     }
 
     /** clear adapter. */
     override fun clear() {
-        sections[0].clear()
+        sections()[0].clear()
         notifyDataSetChanged()
     }
 
