@@ -25,7 +25,6 @@ import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
 import android.view.Gravity
 import androidx.annotation.ColorInt
-import androidx.annotation.DrawableRes
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
 
@@ -38,7 +37,6 @@ fun ribbonView(context: Context, block: RibbonView.Builder.() -> Unit): RibbonVi
 @Suppress("unused", "MemberVisibilityCanBePrivate")
 class RibbonView : AppCompatTextView, RibbonInterface {
 
-    @DrawableRes
     var ribbonDrawable: Drawable? = null
         set(value) {
             field = value
@@ -125,7 +123,7 @@ class RibbonView : AppCompatTextView, RibbonInterface {
     private fun setTypeArray(typeArray: TypedArray) {
         ribbonDrawable = typeArray.getDrawable(R.styleable.RibbonView_ribbon_drawable)
         ribbonBackgroundColor =
-                typeArray.getColor(R.styleable.RibbonView_ribbon_background_color, ribbonBackgroundColor)
+            typeArray.getColor(R.styleable.RibbonView_ribbon_background_color, ribbonBackgroundColor)
         ribbonRadius = typeArray.getDimension(R.styleable.RibbonView_ribbon_ribbonRadius, ribbonRadius)
         ribbonRotation = typeArray.getInt(R.styleable.RibbonView_ribbon_rotation, ribbonRotation)
         paddingLeft = typeArray.getDimension(R.styleable.RibbonView_ribbon_padding_left, paddingLeft)
@@ -185,7 +183,6 @@ class RibbonView : AppCompatTextView, RibbonInterface {
 
     /** [RibbonView] builder class. */
     class Builder(val context: Context) {
-        @DrawableRes
         @JvmField
         var ribbonDrawable: Drawable? = null
         @ColorInt
@@ -212,7 +209,7 @@ class RibbonView : AppCompatTextView, RibbonInterface {
         @JvmField
         var textStyle = Typeface.NORMAL
 
-        fun setRibbonDrawable(@DrawableRes RibbonDrawable: Drawable?): Builder =
+        fun setRibbonDrawable(RibbonDrawable: Drawable?): Builder =
             apply { this.ribbonDrawable = RibbonDrawable }
 
         fun setRibbonBackgroundColor(@ColorInt color: Int): Builder = apply { this.ribbonBackgroundColor = color }

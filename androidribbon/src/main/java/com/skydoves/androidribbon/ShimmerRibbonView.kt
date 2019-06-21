@@ -110,16 +110,15 @@ class ShimmerRibbonView : ShimmerFrameLayout, RibbonInterface {
             textSize =
                     typeArray.getDimensionPixelSize(R.styleable.ShimmerRibbonView_shimmer_ribbon_textSize, 12).toFloat()
 
-            val typeface = typeArray.getInteger(R.styleable.ShimmerRibbonView_shimmer_ribbon_textStyle, 0)
-            when (typeface) {
-                0 -> setTypeface(Typeface.DEFAULT_BOLD)
+            when (typeArray.getInteger(R.styleable.ShimmerRibbonView_shimmer_ribbon_textStyle, 0)) {
+                0 -> typeface = Typeface.DEFAULT_BOLD
                 1 -> setTypeface(Typeface.defaultFromStyle(Typeface.ITALIC), Typeface.ITALIC)
             }
         }
         frameRotation = typeArray.getInt(R.styleable.ShimmerRibbonView_shimmer_ribbon_rotation, frameRotation)
     }
 
-    private fun onCreateByBuilder(builder: ShimmerRibbonView.Builder) {
+    private fun onCreateByBuilder(builder: Builder) {
         ribbon = builder.ribbon
         shimmer = builder.shimmer
         updateRibbon()

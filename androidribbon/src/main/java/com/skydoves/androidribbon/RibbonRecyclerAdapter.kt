@@ -23,8 +23,7 @@ import com.skydoves.baserecyclerviewadapter.SectionRow
 
 /** RibbonRecyclerAdapter is an implementation of [BaseAdapter] that has [RibbonView] as items. */
 class RibbonRecyclerAdapter(private val delegate: RibbonRecyclerViewHolder.Delegate? = null)
-    : BaseAdapter(), IRibbonList
-{
+    : BaseAdapter(), IRibbonList {
 
     init {
         addSection(ArrayList<RibbonView>())
