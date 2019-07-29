@@ -5,8 +5,7 @@ apply from: '../dependencies.gradle'
 apply from: '../publish.gradle'
 
 android {
-    compileSdkVersion 28
-
+    compileSdkVersion versions.compileSdk
     defaultConfig {
         minSdkVersion versions.minSdk
         targetSdkVersion versions.compileSdk
