@@ -15,7 +15,7 @@ Beautiful and the simplest ribbon view with shimmering effect. [中文語](https
 And add a dependency code to your **module**'s `build.gradle` file.
 ```gradle
 dependencies {  
-    implementation "com.github.skydoves:androidribbon:1.0.0"
+    implementation "com.github.skydoves:androidribbon:1.0.1"
 }
 ```
 
