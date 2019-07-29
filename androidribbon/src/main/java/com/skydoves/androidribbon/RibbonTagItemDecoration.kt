@@ -22,11 +22,11 @@ import androidx.recyclerview.widget.RecyclerView
 
 /** RibbonTagItemDecoration creates the space of [RecyclerView] by orientation align. */
 class RibbonTagItemDecoration(private val space: Int, private val orientation: Int) : RecyclerView.ItemDecoration() {
-    override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
-        super.getItemOffsets(outRect, view, parent, state)
-        when (orientation) {
-            0 -> outRect.bottom = space
-            1 -> outRect.right = space
-        }
+  override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+    super.getItemOffsets(outRect, view, parent, state)
+    when (orientation) {
+      0 -> outRect.bottom = space
+      1 -> outRect.right = space
     }
+  }
 }

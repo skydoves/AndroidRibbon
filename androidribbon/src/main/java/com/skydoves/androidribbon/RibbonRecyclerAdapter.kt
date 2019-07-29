@@ -22,70 +22,70 @@ import com.skydoves.baserecyclerviewadapter.BaseViewHolder
 import com.skydoves.baserecyclerviewadapter.SectionRow
 
 /** RibbonRecyclerAdapter is an implementation of [BaseAdapter] that has [RibbonView] as items. */
-class RibbonRecyclerAdapter(private val delegate: RibbonRecyclerViewHolder.Delegate? = null)
-    : BaseAdapter(), IRibbonList {
+class RibbonRecyclerAdapter(private val delegate: RibbonRecyclerViewHolder.Delegate? = null) :
+  BaseAdapter(), IRibbonList {
 
-    init {
-        addSection(ArrayList<RibbonView>())
-    }
+  init {
+    addSection(ArrayList<RibbonView>())
+  }
 
-    /** add a ribbon on the adapter. */
-    override fun addRibbon(ribbonView: RibbonView) {
-        addItemOnSection(0, ribbonView)
-        notifyDataSetChanged()
-    }
+  /** add a ribbon on the adapter. */
+  override fun addRibbon(ribbonView: RibbonView) {
+    addItemOnSection(0, ribbonView)
+    notifyDataSetChanged()
+  }
 
-    /** add a ribbon on the adapter by position. */
-    override fun addRibbon(position: Int, ribbonView: RibbonView) {
-        sections()[0].add(position, ribbonView)
-        notifyItemChanged(position)
-    }
+  /** add a ribbon on the adapter by position. */
+  override fun addRibbon(position: Int, ribbonView: RibbonView) {
+    sections()[0].add(position, ribbonView)
+    notifyItemChanged(position)
+  }
 
-    /** add ribbons on the adapter. */
-    override fun addRibbonList(ribbonViewList: List<RibbonView>) {
-        addItemListOnSection(0, ribbonViewList)
-        notifyDataSetChanged()
-    }
+  /** add ribbons on the adapter. */
+  override fun addRibbonList(ribbonViewList: List<RibbonView>) {
+    addItemListOnSection(0, ribbonViewList)
+    notifyDataSetChanged()
+  }
 
-    /** get a ribbon from the adapter. */
-    override fun getRibbonView(position: Int): RibbonView {
-        return sections()[0][position] as RibbonView
-    }
+  /** get a ribbon from the adapter. */
+  override fun getRibbonView(position: Int): RibbonView {
+    return sections()[0][position] as RibbonView
+  }
 
-    /** add ribbon from the adapter. */
-    override fun getRibbonViews(): List<RibbonView> {
-        val ribbonList = ArrayList<RibbonView>()
-        for (item in sections()[0]) {
-            if (item is RibbonView) {
-                ribbonList.add(item)
-            }
-        }
-        return ribbonList
+  /** add ribbon from the adapter. */
+  override fun getRibbonViews(): List<RibbonView> {
+    val ribbonList = ArrayList<RibbonView>()
+    for (item in sections()[0]) {
+      if (item is RibbonView) {
+        ribbonList.add(item)
+      }
     }
+    return ribbonList
+  }
 
-    /** remove a ribbon on the adapter. */
-    override fun removeRibbon(ribbonView: RibbonView) {
-        sections()[0].remove(ribbonView)
-        notifyDataSetChanged()
-    }
+  /** remove a ribbon on the adapter. */
+  override fun removeRibbon(ribbonView: RibbonView) {
+    sections()[0].remove(ribbonView)
+    notifyDataSetChanged()
+  }
 
-    /** remove a ribbon on the adapter by position. */
-    override fun removeRibbon(position: Int) {
-        sections()[0].removeAt(position)
-        notifyItemChanged(position)
-    }
+  /** remove a ribbon on the adapter by position. */
+  override fun removeRibbon(position: Int) {
+    sections()[0].removeAt(position)
+    notifyItemChanged(position)
+  }
 
-    /** clear adapter. */
-    override fun clear() {
-        sections()[0].clear()
-        notifyDataSetChanged()
-    }
+  /** clear adapter. */
+  override fun clear() {
+    sections()[0].clear()
+    notifyDataSetChanged()
+  }
 
-    override fun layout(sectionRow: SectionRow): Int {
-        return R.layout.item_ribbon
-    }
+  override fun layout(sectionRow: SectionRow): Int {
+    return R.layout.item_ribbon
+  }
 
-    override fun viewHolder(layout: Int, view: View): BaseViewHolder {
-        return RibbonRecyclerViewHolder(view, delegate)
-    }
+  override fun viewHolder(layout: Int, view: View): BaseViewHolder {
+    return RibbonRecyclerViewHolder(view, delegate)
+  }
 }

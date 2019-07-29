@@ -27,93 +27,93 @@ import androidx.recyclerview.widget.RecyclerView
 @Suppress("LiftReturnOrAssignment")
 class RibbonRecyclerView : RecyclerView, IRibbonList {
 
-    private val ribbonAdapter: RibbonRecyclerAdapter = RibbonRecyclerAdapter()
-    private var space = 3f
-    private var orientation = 1
+  private val ribbonAdapter: RibbonRecyclerAdapter = RibbonRecyclerAdapter()
+  private var space = 3f
+  private var orientation = 1
 
-    constructor(context: Context) : super(context) {
-        onCreate()
-    }
+  constructor(context: Context) : super(context) {
+    onCreate()
+  }
 
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
-        getAttrs(attrs)
-        onCreate()
-    }
+  constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
+    getAttrs(attrs)
+    onCreate()
+  }
 
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
-        getAttrs(attrs, defStyleAttr)
-        onCreate()
-    }
+  constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+    getAttrs(attrs, defStyleAttr)
+    onCreate()
+  }
 
-    private fun getAttrs(attributeSet: AttributeSet) {
-        val typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.RibbonRecyclerView)
-        try {
-            setTypeArray(typedArray)
-        } finally {
-            typedArray.recycle()
-        }
+  private fun getAttrs(attributeSet: AttributeSet) {
+    val typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.RibbonRecyclerView)
+    try {
+      setTypeArray(typedArray)
+    } finally {
+      typedArray.recycle()
     }
+  }
 
-    private fun getAttrs(attributeSet: AttributeSet, defStyleAttr: Int) {
-        val typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.RibbonRecyclerView, defStyleAttr, 0)
-        try {
-            setTypeArray(typedArray)
-        } finally {
-            typedArray.recycle()
-        }
+  private fun getAttrs(attributeSet: AttributeSet, defStyleAttr: Int) {
+    val typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.RibbonRecyclerView, defStyleAttr, 0)
+    try {
+      setTypeArray(typedArray)
+    } finally {
+      typedArray.recycle()
     }
+  }
 
-    private fun setTypeArray(typeArray: TypedArray) {
-        space = typeArray.getDimension(R.styleable.RibbonRecyclerView_ribbon_recycler_space, space)
-        orientation = typeArray.getInt(R.styleable.RibbonRecyclerView_ribbon_recycler_orientation, orientation)
-    }
+  private fun setTypeArray(typeArray: TypedArray) {
+    space = typeArray.getDimension(R.styleable.RibbonRecyclerView_ribbon_recycler_space, space)
+    orientation = typeArray.getInt(R.styleable.RibbonRecyclerView_ribbon_recycler_orientation, orientation)
+  }
 
-    private fun onCreate() {
-        when (orientation) {
-            0 -> layoutManager = LinearLayoutManager(context)
-            1 -> layoutManager = LinearLayoutManager(context, LinearLayout.HORIZONTAL, false)
-        }
-        addItemDecoration(RibbonTagItemDecoration(space.dp2px(resources), orientation))
-        adapter = ribbonAdapter
+  private fun onCreate() {
+    when (orientation) {
+      0 -> layoutManager = LinearLayoutManager(context)
+      1 -> layoutManager = LinearLayoutManager(context, LinearLayout.HORIZONTAL, false)
     }
+    addItemDecoration(RibbonTagItemDecoration(space.dp2px(resources), orientation))
+    adapter = ribbonAdapter
+  }
 
-    /** add a ribbon on the adapter. */
-    override fun addRibbon(ribbonView: RibbonView) {
-        ribbonAdapter.addRibbon(ribbonView)
-    }
+  /** add a ribbon on the adapter. */
+  override fun addRibbon(ribbonView: RibbonView) {
+    ribbonAdapter.addRibbon(ribbonView)
+  }
 
-    /** add a ribbon on the adapter by position. */
-    override fun addRibbon(position: Int, ribbonView: RibbonView) {
-        ribbonAdapter.addRibbon(position, ribbonView)
-    }
+  /** add a ribbon on the adapter by position. */
+  override fun addRibbon(position: Int, ribbonView: RibbonView) {
+    ribbonAdapter.addRibbon(position, ribbonView)
+  }
 
-    /** add ribbons on the adapter. */
-    override fun addRibbonList(ribbonViewList: List<RibbonView>) {
-        ribbonAdapter.addRibbonList(ribbonViewList)
-    }
+  /** add ribbons on the adapter. */
+  override fun addRibbonList(ribbonViewList: List<RibbonView>) {
+    ribbonAdapter.addRibbonList(ribbonViewList)
+  }
 
-    /** get a ribbon from the adapter. */
-    override fun getRibbonView(position: Int): RibbonView {
-        return ribbonAdapter.getRibbonView(position)
-    }
+  /** get a ribbon from the adapter. */
+  override fun getRibbonView(position: Int): RibbonView {
+    return ribbonAdapter.getRibbonView(position)
+  }
 
-    /** add ribbon from the adapter. */
-    override fun getRibbonViews(): List<RibbonView> {
-        return ribbonAdapter.getRibbonViews()
-    }
+  /** add ribbon from the adapter. */
+  override fun getRibbonViews(): List<RibbonView> {
+    return ribbonAdapter.getRibbonViews()
+  }
 
-    /** remove a ribbon on the adapter. */
-    override fun removeRibbon(ribbonView: RibbonView) {
-        ribbonAdapter.removeRibbon(ribbonView)
-    }
+  /** remove a ribbon on the adapter. */
+  override fun removeRibbon(ribbonView: RibbonView) {
+    ribbonAdapter.removeRibbon(ribbonView)
+  }
 
-    /** remove a ribbon on the adapter by position. */
-    override fun removeRibbon(position: Int) {
-        ribbonAdapter.removeRibbon(position)
-    }
+  /** remove a ribbon on the adapter by position. */
+  override fun removeRibbon(position: Int) {
+    ribbonAdapter.removeRibbon(position)
+  }
 
-    /** clear adapter. */
-    override fun clear() {
-        ribbonAdapter.clearAllSections()
-    }
+  /** clear adapter. */
+  override fun clear() {
+    ribbonAdapter.clear()
+  }
 }

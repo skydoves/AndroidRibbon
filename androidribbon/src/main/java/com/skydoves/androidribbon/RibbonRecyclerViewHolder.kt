@@ -23,38 +23,38 @@ import com.skydoves.baserecyclerviewadapter.BaseViewHolder
 /** RibbonRecyclerAdapter is an implementation of [BaseViewHolder] that has [RibbonView] as data. */
 @Suppress("CanBeParameter")
 class RibbonRecyclerViewHolder(
-    private val view: View,
-    private val delegate: Delegate? = null
+  private val view: View,
+  private val delegate: Delegate? = null
 ) : BaseViewHolder(view) {
 
-    /** Delegate is delegate interface for communicating with view. */
-    interface Delegate {
-        /** onRibbonItemClick will invoked by [onClick] method. */
-        fun onRibbonItemClick(ribbonView: RibbonView)
+  /** Delegate is delegate interface for communicating with view. */
+  interface Delegate {
+    /** onRibbonItemClick will invoked by [onClick] method. */
+    fun onRibbonItemClick(ribbonView: RibbonView)
+  }
+
+  private lateinit var ribbonView: RibbonView
+
+  /** bind data to RibbonView */
+  override fun bindData(data: Any) {
+    if (data is RibbonView) {
+      this.ribbonView = data
+      drawItemUI()
     }
+  }
 
-    private lateinit var ribbonView: RibbonView
+  /** draw on item UI */
+  private fun drawItemUI() {
+    val layout: LinearLayout = itemView.findViewById(R.id.item_ribbon_layout)
+    layout.removeAllViews()
+    layout.addView(ribbonView)
+  }
 
-    /** bind data to RibbonView */
-    override fun bindData(data: Any) {
-        if (data is RibbonView) {
-            this.ribbonView = data
-            drawItemUI()
-        }
-    }
+  /** invoke onItemClickListener */
+  override fun onClick(p0: View?) {
+    delegate?.onRibbonItemClick(ribbonView)
+  }
 
-    /** draw on item UI */
-    private fun drawItemUI() {
-        val layout: LinearLayout = itemView.findViewById(R.id.item_ribbon_layout)
-        layout.removeAllViews()
-        layout.addView(ribbonView)
-    }
-
-    /** invoke onItemClickListener */
-    override fun onClick(p0: View?) {
-        delegate?.onRibbonItemClick(ribbonView)
-    }
-
-    /** invoke onItemLongClickListener */
-    override fun onLongClick(p0: View?) = false
+  /** invoke onItemLongClickListener */
+  override fun onLongClick(p0: View?) = false
 }

@@ -17,14 +17,14 @@
 package com.skydoves.androidribbon
 
 internal interface IRibbonList {
-    fun addRibbon(ribbonView: RibbonView)
-    fun addRibbon(position: Int, ribbonView: RibbonView)
-    fun addRibbonList(ribbonViewList: List<RibbonView>)
+  fun addRibbon(ribbonView: RibbonView)
+  fun addRibbon(position: Int, ribbonView: RibbonView)
+  fun addRibbonList(ribbonViewList: List<RibbonView>)
 
-    fun getRibbonView(position: Int): RibbonView
-    fun getRibbonViews(): List<RibbonView>
+  fun getRibbonView(position: Int): RibbonView
+  fun getRibbonViews(): List<RibbonView>
 
-    fun removeRibbon(ribbonView: RibbonView)
-    fun removeRibbon(position: Int)
-    fun clear()
+  fun removeRibbon(ribbonView: RibbonView)
+  fun removeRibbon(position: Int)
+  fun clear()
 }
