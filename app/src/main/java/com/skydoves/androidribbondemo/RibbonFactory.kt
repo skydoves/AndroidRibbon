@@ -31,90 +31,90 @@ import com.skydoves.androidribbon.shimmerRibbonView
  */
 
 object RibbonFactory {
-    fun getChristmasRibbonHeader(context: Context): ShimmerRibbonView {
-        return shimmerRibbonView(context) {
-            ribbon = ribbonView(context) {
-                ribbonDrawable = ContextCompat.getDrawable(context, R.drawable.ribbon_red_header)
-            }.apply { alpha = 0.9f }
-            shimmer = alphaShimmer {
-                setBaseAlpha(1.0f)
-                setHighlightAlpha(0.5f)
-            }
-        }
+  fun getChristmasRibbonHeader(context: Context): ShimmerRibbonView {
+    return shimmerRibbonView(context) {
+      ribbon = ribbonView(context) {
+        ribbonDrawable = ContextCompat.getDrawable(context, R.drawable.ribbon_red_header)
+      }.apply { alpha = 0.9f }
+      shimmer = alphaShimmer {
+        setBaseAlpha(1.0f)
+        setHighlightAlpha(0.5f)
+      }
     }
+  }
 
-    fun getChristmasRibbonBottom(context: Context): ShimmerRibbonView {
-        return shimmerRibbonView(context) {
-            ribbon = ribbonView(context) {
-                ribbonDrawable = ContextCompat.getDrawable(context, R.drawable.ribbon_red_bottom)
-            }.apply { alpha = 0.9f }
-            shimmer = alphaShimmer {
-                setBaseAlpha(1.0f)
-                setHighlightAlpha(0.5f)
-            }
-        }
+  fun getChristmasRibbonBottom(context: Context): ShimmerRibbonView {
+    return shimmerRibbonView(context) {
+      ribbon = ribbonView(context) {
+        ribbonDrawable = ContextCompat.getDrawable(context, R.drawable.ribbon_red_bottom)
+      }.apply { alpha = 0.9f }
+      shimmer = alphaShimmer {
+        setBaseAlpha(1.0f)
+        setHighlightAlpha(0.5f)
+      }
     }
+  }
 
-    fun getChristmasPinkRibbonHeader(context: Context): ShimmerRibbonView {
-        return shimmerRibbonView(context) {
-            ribbon = ribbonView(context) {
-                ribbonDrawable = ContextCompat.getDrawable(context, R.drawable.ribbon02)
-                ribbonRotation = -45
-                text = "Android-Ribbon"
-                textColor = Color.WHITE
-                textSize = 13f
-                textStyle = Typeface.BOLD
-            }
-            shimmer = alphaShimmer {
-                setBaseAlpha(1.0f)
-                setHighlightAlpha(0.5f)
-            }
-        }
+  fun getChristmasPinkRibbonHeader(context: Context): ShimmerRibbonView {
+    return shimmerRibbonView(context) {
+      ribbon = ribbonView(context) {
+        ribbonDrawable = ContextCompat.getDrawable(context, R.drawable.ribbon02)
+        ribbonRotation = -45
+        text = "Android-Ribbon"
+        textColor = Color.WHITE
+        textSize = 13f
+        textStyle = Typeface.BOLD
+      }
+      shimmer = alphaShimmer {
+        setBaseAlpha(1.0f)
+        setHighlightAlpha(0.5f)
+      }
     }
+  }
 
-    fun getChristmasPinkRibbonBottom(context: Context): ShimmerRibbonView {
-        return shimmerRibbonView(context) {
-            ribbon = ribbonView(context) {
-                ribbonDrawable = ContextCompat.getDrawable(context, R.drawable.ribbon02)
-                text = "Android-Ribbon-Bottom"
-                textColor = Color.WHITE
-                textSize = 13f
-                textStyle = Typeface.BOLD
-            }
-            shimmer = alphaShimmer {
-                setBaseAlpha(1.0f)
-                setHighlightAlpha(0.5f)
-            }
-        }
+  fun getChristmasPinkRibbonBottom(context: Context): ShimmerRibbonView {
+    return shimmerRibbonView(context) {
+      ribbon = ribbonView(context) {
+        ribbonDrawable = ContextCompat.getDrawable(context, R.drawable.ribbon02)
+        text = "Android-Ribbon-Bottom"
+        textColor = Color.WHITE
+        textSize = 13f
+        textStyle = Typeface.BOLD
+      }
+      shimmer = alphaShimmer {
+        setBaseAlpha(1.0f)
+        setHighlightAlpha(0.5f)
+      }
     }
+  }
 
-    fun getPresentRibbonHeader(context: Context): ShimmerRibbonView {
-        return shimmerRibbonView(context) {
-            ribbon = ribbonView(context) {
-                ribbonDrawable = ContextCompat.getDrawable(context, R.drawable.ribbon_vertical)
-            }
-            shimmer = alphaShimmer {
-                setBaseAlpha(1.0f)
-                setHighlightAlpha(0.3f)
-            }
-        }
+  fun getPresentRibbonHeader(context: Context): ShimmerRibbonView {
+    return shimmerRibbonView(context) {
+      ribbon = ribbonView(context) {
+        ribbonDrawable = ContextCompat.getDrawable(context, R.drawable.ribbon_vertical)
+      }
+      shimmer = alphaShimmer {
+        setBaseAlpha(1.0f)
+        setHighlightAlpha(0.3f)
+      }
     }
+  }
 
-    fun getPresentRibbonBottom(context: Context): ShimmerRibbonView {
-        return shimmerRibbonView(context) {
-            ribbon = ribbonView(context) {
-                ribbonDrawable = ContextCompat.getDrawable(context, R.drawable.ribbon03)
-                paddingBottom = 14f
-                paddingTop = 10f
-                text = "Jaewoong Eum"
-                textColor = Color.WHITE
-                textSize = 13f
-                textStyle = Typeface.BOLD
-            }
-            shimmer = alphaShimmer {
-                setBaseAlpha(1.0f)
-                setHighlightAlpha(0.5f)
-            }
-        }
+  fun getPresentRibbonBottom(context: Context): ShimmerRibbonView {
+    return shimmerRibbonView(context) {
+      ribbon = ribbonView(context) {
+        ribbonDrawable = ContextCompat.getDrawable(context, R.drawable.ribbon03)
+        paddingBottom = 14f
+        paddingTop = 10f
+        text = "Jaewoong Eum"
+        textColor = Color.WHITE
+        textSize = 13f
+        textStyle = Typeface.BOLD
+      }
+      shimmer = alphaShimmer {
+        setBaseAlpha(1.0f)
+        setHighlightAlpha(0.5f)
+      }
     }
+  }
 }

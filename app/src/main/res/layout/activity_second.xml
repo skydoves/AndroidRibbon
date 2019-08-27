@@ -1,159 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal">
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical">
+
+        <com.skydoves.androidribbon.RibbonRecyclerView
+          android:id="@+id/ribbonRecyclerView"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="15dp"
+          app:ribbon_recycler_space="3dp" />
+
+        <com.skydoves.androidribbon.RibbonView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="skydoves"
+          android:textColor="@android:color/white"
+          app:ribbon_drawable="@drawable/ribbon03"
+          app:ribbon_padding_bottom="8dp"
+          app:ribbon_padding_top="4dp" />
+      </LinearLayout>
+
+      <androidx.cardview.widget.CardView
+        android:layout_width="180dp"
+        android:layout_height="119dp"
+        android:layout_margin="15dp"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="6dp">
+
+        <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+          <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:scaleType="fitXY"
+            android:src="@drawable/item01" />
 
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-            <androidx.cardview.widget.CardView
-                    android:layout_width="180dp"
-                    android:layout_height="119dp"
-                    android:foreground="?attr/selectableItemBackground"
-                    android:layout_margin="15dp"
-                    app:cardElevation="6dp"
-                    app:cardCornerRadius="5dp">
-
-                <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                    <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/item01"
-                            android:scaleType="fitXY"/>
-
-                    <com.skydoves.androidribbon.ShimmerRibbonView
-                            android:layout_width="130dp"
-                            android:layout_height="wrap_content"
-                            android:alpha="0.8"
-                            app:shimmer_ribbon_background_color="@color/colorPrimaryDark"
-                            app:shimmer_base_alpha="1.0"
-                            app:shimmer_highlight_alpha="0.5"
-                            app:shimmer_ribbon_textColor="@android:color/white"
-                            app:shimmer_ribbon_text="skydoves"
-                            app:shimmer_ribbon_padding_top="3dp"
-                            app:shimmer_ribbon_padding_bottom="3dp"
-                            app:shimmer_ribbon_rotation="-45"
-                            app:shimmer_ribbon_textStyle="bold"/>
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
-
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginTop="15dp">
-
-                <com.skydoves.androidribbon.RibbonView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="skydoves"
-                        android:textColor="@android:color/white"
-                        app:ribbon_padding_top="4dp"
-                        app:ribbon_padding_bottom="8dp"
-                        app:ribbon_drawable="@drawable/ribbon03"/>
-
-                <com.skydoves.androidribbon.RibbonRecyclerView
-                        android:id="@+id/ribbonRecyclerView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        app:ribbon_recycler_space="3dp"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp">
-
-            <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:foreground="?attr/selectableItemBackground"
-                    app:cardElevation="6dp"
-                    app:cardCornerRadius="10dp">
-
-                <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="180dp"
-                        android:src="@drawable/background02"
-                        android:scaleType="fitXY"/>
-
-                <com.skydoves.androidribbon.ShimmerRibbonView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:alpha="0.8"
-                        android:layout_gravity="end"
-                        app:shimmer_ribbon_background_color="@color/md_red_800"
-                        app:shimmer_base_alpha="1.0"
-                        app:shimmer_highlight_alpha="0.7"
-                        app:shimmer_ribbon_textSize="4sp"
-                        app:shimmer_ribbon_textColor="@android:color/white"
-                        app:shimmer_ribbon_text="Merry Christmas"
-                        app:shimmer_ribbon_padding_top="5dp"
-                        app:shimmer_ribbon_padding_bottom="5dp"
-                        app:shimmer_ribbon_rotation="40"
-                        app:shimmer_ribbon_textStyle="bold"/>
-
-                <com.skydoves.androidribbon.ShimmerRibbonView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:alpha="0.8"
-                        android:layout_gravity="bottom"
-                        app:shimmer_ribbon_background_color="#D50000"
-                        app:shimmer_base_alpha="1.0"
-                        app:shimmer_highlight_alpha="0.7"
-                        app:shimmer_ribbon_textSize="5sp"
-                        app:shimmer_ribbon_textColor="@android:color/white"
-                        app:shimmer_ribbon_text="Merry Christmas"
-                        app:shimmer_ribbon_padding_top="7dp"
-                        app:shimmer_ribbon_padding_bottom="7dp"
-                        app:shimmer_ribbon_textStyle="bold"/>
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
-
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp">
-
-            <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:foreground="?attr/selectableItemBackground"
-                    app:cardElevation="6dp"
-                    app:cardCornerRadius="10dp">
-
-                <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="180dp"
-                        android:src="@drawable/background03"
-                        android:scaleType="fitXY"/>
-
-                <com.skydoves.androidribbon.ShimmerRibbonView
-                        android:layout_width="match_parent"
-                        android:layout_height="180dp"
-                        android:layout_gravity="center"
-                        app:shimmer_ribbon_drawable="@drawable/ribbon6"
-                        app:shimmer_base_alpha="1.0"
-                        app:shimmer_highlight_alpha="0.7"/>
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
+          <com.skydoves.androidribbon.ShimmerRibbonView
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:alpha="0.8"
+            app:shimmer_base_alpha="1.0"
+            app:shimmer_highlight_alpha="0.5"
+            app:shimmer_ribbon_background_color="@color/colorPrimaryDark"
+            app:shimmer_ribbon_padding_bottom="3dp"
+            app:shimmer_ribbon_padding_top="3dp"
+            app:shimmer_ribbon_rotation="-45"
+            app:shimmer_ribbon_text="skydoves"
+            app:shimmer_ribbon_textColor="@android:color/white"
+            app:shimmer_ribbon_textStyle="bold" />
+        </RelativeLayout>
+      </androidx.cardview.widget.CardView>
     </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingLeft="15dp"
+      android:paddingRight="15dp">
+
+      <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="6dp">
+
+        <ImageView
+          android:layout_width="match_parent"
+          android:layout_height="180dp"
+          android:scaleType="fitXY"
+          android:src="@drawable/background02" />
+
+        <com.skydoves.androidribbon.ShimmerRibbonView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="end"
+          android:alpha="0.8"
+          app:shimmer_base_alpha="1.0"
+          app:shimmer_highlight_alpha="0.7"
+          app:shimmer_ribbon_background_color="@color/md_red_800"
+          app:shimmer_ribbon_padding_bottom="5dp"
+          app:shimmer_ribbon_padding_top="5dp"
+          app:shimmer_ribbon_rotation="40"
+          app:shimmer_ribbon_text="Merry Christmas"
+          app:shimmer_ribbon_textColor="@android:color/white"
+          app:shimmer_ribbon_textSize="4sp"
+          app:shimmer_ribbon_textStyle="bold" />
+
+        <com.skydoves.androidribbon.ShimmerRibbonView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="bottom"
+          android:alpha="0.8"
+          app:shimmer_base_alpha="1.0"
+          app:shimmer_highlight_alpha="0.7"
+          app:shimmer_ribbon_background_color="#D50000"
+          app:shimmer_ribbon_padding_bottom="7dp"
+          app:shimmer_ribbon_padding_top="7dp"
+          app:shimmer_ribbon_text="Merry Christmas"
+          app:shimmer_ribbon_textColor="@android:color/white"
+          app:shimmer_ribbon_textSize="5sp"
+          app:shimmer_ribbon_textStyle="bold" />
+      </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingLeft="15dp"
+      android:paddingRight="15dp">
+
+      <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="6dp">
+
+        <ImageView
+          android:layout_width="match_parent"
+          android:layout_height="180dp"
+          android:scaleType="fitXY"
+          android:src="@drawable/background03" />
+
+        <com.skydoves.androidribbon.ShimmerRibbonView
+          android:layout_width="match_parent"
+          android:layout_height="180dp"
+          android:layout_gravity="center"
+          app:shimmer_base_alpha="1.0"
+          app:shimmer_highlight_alpha="0.7"
+          app:shimmer_ribbon_drawable="@drawable/ribbon6" />
+      </androidx.cardview.widget.CardView>
+    </LinearLayout>
+  </LinearLayout>
 </ScrollView>
