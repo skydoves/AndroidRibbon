@@ -46,7 +46,7 @@ class RibbonView : AppCompatTextView, RibbonInterface {
       updateRibbon()
     }
   @ColorInt
-  var ribbonBackgroundColor = ContextCompat.getColor(context, R.color.bright_lavender)
+  var ribbonBackgroundColor = ContextCompat.getColor(context, R.color.colorPrimary)
     set(value) {
       field = value
       background.apply {
@@ -101,8 +101,11 @@ class RibbonView : AppCompatTextView, RibbonInterface {
   }
 
   private fun onCreate() {
-    setBackgroundResource(R.drawable.rectangle_layout)
-    gravity = Gravity.CENTER
+    val gradient = GradientDrawable()
+    gradient.setColor(ribbonBackgroundColor)
+    gradient.cornerRadius = ribbonRadius
+    this.background = gradient
+    this.gravity = Gravity.CENTER
   }
 
   private fun getAttrs(attributeSet: AttributeSet) {
@@ -124,30 +127,30 @@ class RibbonView : AppCompatTextView, RibbonInterface {
   }
 
   private fun setTypeArray(typeArray: TypedArray) {
-    ribbonDrawable = typeArray.getDrawable(R.styleable.RibbonView_ribbon_drawable)
-    ribbonBackgroundColor =
+    this.ribbonDrawable = typeArray.getDrawable(R.styleable.RibbonView_ribbon_drawable)
+    this.ribbonBackgroundColor =
       typeArray.getColor(R.styleable.RibbonView_ribbon_background_color, ribbonBackgroundColor)
-    ribbonRadius = typeArray.getDimension(R.styleable.RibbonView_ribbon_ribbonRadius, ribbonRadius)
-    ribbonRotation = typeArray.getInt(R.styleable.RibbonView_ribbon_rotation, ribbonRotation)
-    paddingLeft = typeArray.getDimension(R.styleable.RibbonView_ribbon_padding_left, paddingLeft)
-    paddingTop = typeArray.getDimension(R.styleable.RibbonView_ribbon_padding_top, paddingTop)
-    paddingRight = typeArray.getDimension(R.styleable.RibbonView_ribbon_padding_right, paddingRight)
-    paddingBottom = typeArray.getDimension(R.styleable.RibbonView_ribbon_padding_bottom, paddingBottom)
+    this.ribbonRadius = typeArray.getDimension(R.styleable.RibbonView_ribbon_ribbonRadius, ribbonRadius)
+    this.ribbonRotation = typeArray.getInt(R.styleable.RibbonView_ribbon_rotation, ribbonRotation)
+    this.paddingLeft = typeArray.getDimension(R.styleable.RibbonView_ribbon_padding_left, paddingLeft)
+    this.paddingTop = typeArray.getDimension(R.styleable.RibbonView_ribbon_padding_top, paddingTop)
+    this.paddingRight = typeArray.getDimension(R.styleable.RibbonView_ribbon_padding_right, paddingRight)
+    this.paddingBottom = typeArray.getDimension(R.styleable.RibbonView_ribbon_padding_bottom, paddingBottom)
   }
 
   /** initialize attributes by [RibbonView.Builder] */
   private fun onCreateByBuilder(builder: Builder) {
-    ribbonDrawable = builder.ribbonDrawable
-    ribbonBackgroundColor = builder.ribbonBackgroundColor
-    ribbonRadius = builder.ribbonRadius
-    ribbonRotation = builder.ribbonRotation
-    paddingLeft = builder.paddingLeft
-    paddingTop = builder.paddingTop
-    paddingRight = builder.paddingRight
-    paddingBottom = builder.paddingBottom
-    text = builder.text
+    this.ribbonDrawable = builder.ribbonDrawable
+    this.ribbonBackgroundColor = builder.ribbonBackgroundColor
+    this.ribbonRadius = builder.ribbonRadius
+    this.ribbonRotation = builder.ribbonRotation
+    this.paddingLeft = builder.paddingLeft
+    this.paddingTop = builder.paddingTop
+    this.paddingRight = builder.paddingRight
+    this.paddingBottom = builder.paddingBottom
+    this.text = builder.text
     setTextColor(builder.textColor)
-    textSize = builder.textSize
+    this.textSize = builder.textSize
     setTypeface(typeface, builder.textStyle)
 
     updateRibbon()
@@ -168,7 +171,7 @@ class RibbonView : AppCompatTextView, RibbonInterface {
       paddingBottom.dp2px(resources)
     )
 
-    ribbonDrawable?.let {
+    this.ribbonDrawable?.let {
       background = ribbonDrawable
     } ?: let {
       if (background is GradientDrawable) {
@@ -191,7 +194,7 @@ class RibbonView : AppCompatTextView, RibbonInterface {
     var ribbonDrawable: Drawable? = null
     @ColorInt
     @JvmField
-    var ribbonBackgroundColor = ContextCompat.getColor(context, R.color.bright_lavender)
+    var ribbonBackgroundColor = ContextCompat.getColor(context, R.color.colorPrimary)
     @JvmField
     var ribbonRotation = 0
     @JvmField
@@ -213,9 +216,7 @@ class RibbonView : AppCompatTextView, RibbonInterface {
     @JvmField
     var textStyle = Typeface.NORMAL
 
-    fun setRibbonDrawable(RibbonDrawable: Drawable?): Builder =
-      apply { this.ribbonDrawable = RibbonDrawable }
-
+    fun setRibbonDrawable(RibbonDrawable: Drawable?): Builder = apply { this.ribbonDrawable = RibbonDrawable }
     fun setRibbonBackgroundColor(@ColorInt color: Int): Builder = apply { this.ribbonBackgroundColor = color }
     fun setRibbonRotation(value: Int): Builder = apply { this.ribbonRotation = value }
     fun setRibbonRadius(value: Float): Builder = apply { this.ribbonRadius = value }

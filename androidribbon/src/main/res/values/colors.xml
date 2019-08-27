@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="lavender">#e5de63b3</color>
-    <color name="bright_lavender">#e254ff</color>
+    <color name="colorPrimary">#e254ff</color>
+    <color name="colorPrimaryDark">#e5de63b3</color>
 </resources>

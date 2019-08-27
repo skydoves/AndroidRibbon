@@ -36,7 +36,7 @@
                             android:layout_width="130dp"
                             android:layout_height="wrap_content"
                             android:alpha="0.8"
-                            app:shimmer_ribbon_background_color="@color/colorPrimary"
+                            app:shimmer_ribbon_background_color="@color/colorPrimaryDark"
                             app:shimmer_base_alpha="1.0"
                             app:shimmer_highlight_alpha="0.5"
                             app:shimmer_ribbon_textColor="@android:color/white"

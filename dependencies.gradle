@@ -5,7 +5,7 @@ ext.versions = [
     versionName        : '1.0.1',
 
     gradleBuildTool    : '3.4.2',
-    spotlessGradle     : '3.23.1',
+    spotlessGradle     : '3.24.2',
     dokkaGradle        : '0.9.18',
     versionPlugin      : '0.21.0',
     bintrayRelease     : '0.9.1',
@@ -15,6 +15,6 @@ ext.versions = [
     googleMaterial     : '1.1.0-alpha02',
     recyclerView       : '1.0.0',
     cardView           : '1.0.0',
-    shimmer            : '0.4.0',
+    shimmer            : '0.5.0',
     baseAdapter        : '0.1.3'
 ]

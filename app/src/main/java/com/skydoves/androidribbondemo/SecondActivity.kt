@@ -33,7 +33,7 @@ class SecondActivity : AppCompatActivity() {
         ribbonRecyclerView.addRibbon(ribbonView = ribbonView(this) {
             text = "Item1"
             textColor = Color.WHITE
-            ribbonBackgroundColor = ContextCompat.getColor(baseContext, R.color.colorPrimary)
+            ribbonBackgroundColor = ContextCompat.getColor(baseContext, R.color.colorPrimaryDark)
         })
         ribbonRecyclerView.addRibbon(ribbonView = ribbonView(this) {
             text = "Item2"

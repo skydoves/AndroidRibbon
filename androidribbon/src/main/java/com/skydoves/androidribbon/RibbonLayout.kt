@@ -81,8 +81,8 @@ class RibbonLayout : FrameLayout, RibbonInterface {
   }
 
   private fun setTypeArray(typeArray: TypedArray) {
-    ribbonHeaderAlign = typeArray.getInteger(R.styleable.RibbonLayout_ribbonLayout_header_align, ribbonHeaderAlign)
-    ribbonBottomAlign = typeArray.getInteger(R.styleable.RibbonLayout_ribbonLayout_bottom_align, ribbonBottomAlign)
+    this.ribbonHeaderAlign = typeArray.getInteger(R.styleable.RibbonLayout_ribbonLayout_header_align, ribbonHeaderAlign)
+    this.ribbonBottomAlign = typeArray.getInteger(R.styleable.RibbonLayout_ribbonLayout_bottom_align, ribbonBottomAlign)
   }
 
   /** update [RibbonLayout] after finishing inflate. */
