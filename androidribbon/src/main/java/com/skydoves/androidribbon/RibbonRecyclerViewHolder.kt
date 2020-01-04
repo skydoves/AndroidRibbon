@@ -17,44 +17,10 @@
 package com.skydoves.androidribbon
 
 import android.view.View
-import android.widget.LinearLayout
-import com.skydoves.baserecyclerviewadapter.BaseViewHolder
+import androidx.recyclerview.widget.RecyclerView
 
-/** RibbonRecyclerAdapter is an implementation of [BaseViewHolder] that has [RibbonView] as data. */
+/** RibbonRecyclerAdapter is an implementation of [RecyclerView.ViewHolder]. */
 @Suppress("CanBeParameter")
 class RibbonRecyclerViewHolder(
-  private val view: View,
-  private val delegate: Delegate? = null
-) : BaseViewHolder(view) {
-
-  /** Delegate is delegate interface for communicating with view. */
-  interface Delegate {
-    /** onRibbonItemClick will invoked by [onClick] method. */
-    fun onRibbonItemClick(ribbonView: RibbonView)
-  }
-
-  private lateinit var ribbonView: RibbonView
-
-  /** bind data to RibbonView */
-  override fun bindData(data: Any) {
-    if (data is RibbonView) {
-      this.ribbonView = data
-      drawItemUI()
-    }
-  }
-
-  /** draw on item UI */
-  private fun drawItemUI() {
-    val layout: LinearLayout = itemView.findViewById(R.id.item_ribbon_layout)
-    layout.removeAllViews()
-    layout.addView(ribbonView)
-  }
-
-  /** invoke onItemClickListener */
-  override fun onClick(p0: View?) {
-    delegate?.onRibbonItemClick(ribbonView)
-  }
-
-  /** invoke onItemLongClickListener */
-  override fun onLongClick(p0: View?) = false
-}
+  private val view: View
+) : RecyclerView.ViewHolder(view)

@@ -17,6 +17,7 @@
 package com.skydoves.androidribbon
 
 internal interface IRibbonList {
+
   fun addRibbon(ribbonView: RibbonView)
   fun addRibbon(position: Int, ribbonView: RibbonView)
   fun addRibbonList(ribbonViewList: List<RibbonView>)
