@@ -20,9 +20,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.skydoves.baserecyclerviewadapter.BaseAdapter
 
-/** RibbonRecyclerAdapter is an implementation of [BaseAdapter] that has [RibbonView] as items. */
+/** RibbonRecyclerAdapter is an implementation of [RecyclerView.Adapter] that has [RibbonView] as items. */
 class RibbonRecyclerAdapter :
   RecyclerView.Adapter<RibbonRecyclerViewHolder>(), IRibbonList {
 
@@ -59,9 +58,7 @@ class RibbonRecyclerAdapter :
   }
 
   /** gets a ribbon from the adapter. */
-  override fun getRibbonView(position: Int): RibbonView {
-    return this.ribbonViewList[position]
-  }
+  override fun getRibbonView(position: Int): RibbonView = this.ribbonViewList[position]
 
   /** gets a list of [RibbonView] from the adapter. */
   override fun getRibbonViews(): List<RibbonView> = this.ribbonViewList
@@ -81,7 +78,7 @@ class RibbonRecyclerAdapter :
     notifyItemChanged(position)
   }
 
-  /** clears adapter. */
+  /** clears all of [RibbonView] items. */
   override fun clear() {
     this.ribbonViewList.clear()
     notifyDataSetChanged()
