@@ -58,7 +58,8 @@ class RibbonLayout : FrameLayout, RibbonInterface {
     getAttrs(attrs)
   }
 
-  constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+  constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs,
+    defStyleAttr) {
     getAttrs(attrs, defStyleAttr)
   }
 
@@ -72,7 +73,8 @@ class RibbonLayout : FrameLayout, RibbonInterface {
   }
 
   private fun getAttrs(attributeSet: AttributeSet, defStyleAttr: Int) {
-    val typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.RibbonLayout, defStyleAttr, 0)
+    val typedArray =
+      context.obtainStyledAttributes(attributeSet, R.styleable.RibbonLayout, defStyleAttr, 0)
     try {
       setTypeArray(typedArray)
     } finally {
@@ -81,8 +83,10 @@ class RibbonLayout : FrameLayout, RibbonInterface {
   }
 
   private fun setTypeArray(typeArray: TypedArray) {
-    this.ribbonHeaderAlign = typeArray.getInteger(R.styleable.RibbonLayout_ribbonLayout_header_align, ribbonHeaderAlign)
-    this.ribbonBottomAlign = typeArray.getInteger(R.styleable.RibbonLayout_ribbonLayout_bottom_align, ribbonBottomAlign)
+    this.ribbonHeaderAlign =
+      typeArray.getInteger(R.styleable.RibbonLayout_ribbonLayout_header_align, ribbonHeaderAlign)
+    this.ribbonBottomAlign =
+      typeArray.getInteger(R.styleable.RibbonLayout_ribbonLayout_bottom_align, ribbonBottomAlign)
   }
 
   /** update [RibbonLayout] after finishing inflate. */

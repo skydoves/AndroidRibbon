@@ -40,7 +40,8 @@ class RibbonRecyclerView : RecyclerView, IRibbonList {
     onCreate()
   }
 
-  constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+  constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs,
+    defStyleAttr) {
     getAttrs(attrs, defStyleAttr)
     onCreate()
   }
@@ -55,7 +56,8 @@ class RibbonRecyclerView : RecyclerView, IRibbonList {
   }
 
   private fun getAttrs(attributeSet: AttributeSet, defStyleAttr: Int) {
-    val typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.RibbonRecyclerView, defStyleAttr, 0)
+    val typedArray =
+      context.obtainStyledAttributes(attributeSet, R.styleable.RibbonRecyclerView, defStyleAttr, 0)
     try {
       setTypeArray(typedArray)
     } finally {
@@ -65,7 +67,8 @@ class RibbonRecyclerView : RecyclerView, IRibbonList {
 
   private fun setTypeArray(typeArray: TypedArray) {
     space = typeArray.getDimension(R.styleable.RibbonRecyclerView_ribbon_recycler_space, space)
-    orientation = typeArray.getInt(R.styleable.RibbonRecyclerView_ribbon_recycler_orientation, orientation)
+    orientation =
+      typeArray.getInt(R.styleable.RibbonRecyclerView_ribbon_recycler_orientation, orientation)
   }
 
   private fun onCreate() {

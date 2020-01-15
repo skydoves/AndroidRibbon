@@ -36,7 +36,10 @@ fun colorShimmer(block: Shimmer.ColorHighlightBuilder.() -> Unit): Shimmer =
 
 /** create a [shimmerRibbonView] by [ShimmerRibbonView.Builder] using dsl. */
 @Suppress("unused")
-fun shimmerRibbonView(context: Context, block: ShimmerRibbonView.Builder.() -> Unit): ShimmerRibbonView =
+fun shimmerRibbonView(
+  context: Context,
+  block: ShimmerRibbonView.Builder.() -> Unit
+): ShimmerRibbonView =
   ShimmerRibbonView.Builder(context).apply(block).build()
 
 /** ShimmerRibbonView implements [RibbonView] on [ShimmerFrameLayout] for shimmering effect. */
@@ -67,7 +70,8 @@ class ShimmerRibbonView : ShimmerFrameLayout, RibbonInterface {
     getAttrs(attrs)
   }
 
-  constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+  constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs,
+    defStyleAttr) {
     getAttrs(attrs, defStyleAttr)
   }
 
@@ -81,7 +85,8 @@ class ShimmerRibbonView : ShimmerFrameLayout, RibbonInterface {
   }
 
   private fun getAttrs(attributeSet: AttributeSet, defStyleAttr: Int) {
-    val typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.ShimmerRibbonView, defStyleAttr, 0)
+    val typedArray =
+      context.obtainStyledAttributes(attributeSet, R.styleable.ShimmerRibbonView, defStyleAttr, 0)
     try {
       setTypeArray(typedArray)
     } finally {
@@ -97,25 +102,34 @@ class ShimmerRibbonView : ShimmerFrameLayout, RibbonInterface {
         ribbonBackgroundColor
       )
       ribbonRadius =
-        typeArray.getDimension(R.styleable.ShimmerRibbonView_shimmer_ribbon_ribbonRadius, ribbonRadius)
-      paddingLeft = typeArray.getDimension(R.styleable.ShimmerRibbonView_shimmer_ribbon_padding_left, paddingLeft)
-      paddingTop = typeArray.getDimension(R.styleable.ShimmerRibbonView_shimmer_ribbon_padding_top, paddingTop)
+        typeArray.getDimension(R.styleable.ShimmerRibbonView_shimmer_ribbon_ribbonRadius,
+          ribbonRadius)
+      paddingLeft =
+        typeArray.getDimension(R.styleable.ShimmerRibbonView_shimmer_ribbon_padding_left,
+          paddingLeft)
+      paddingTop =
+        typeArray.getDimension(R.styleable.ShimmerRibbonView_shimmer_ribbon_padding_top, paddingTop)
       paddingRight =
-        typeArray.getDimension(R.styleable.ShimmerRibbonView_shimmer_ribbon_padding_right, paddingRight)
+        typeArray.getDimension(R.styleable.ShimmerRibbonView_shimmer_ribbon_padding_right,
+          paddingRight)
       paddingBottom =
-        typeArray.getDimension(R.styleable.ShimmerRibbonView_shimmer_ribbon_padding_bottom, paddingBottom)
+        typeArray.getDimension(R.styleable.ShimmerRibbonView_shimmer_ribbon_padding_bottom,
+          paddingBottom)
     }.apply {
       text = typeArray.getString(R.styleable.ShimmerRibbonView_shimmer_ribbon_text)
-      setTextColor(typeArray.getColor(R.styleable.ShimmerRibbonView_shimmer_ribbon_textColor, Color.WHITE))
+      setTextColor(
+        typeArray.getColor(R.styleable.ShimmerRibbonView_shimmer_ribbon_textColor, Color.WHITE))
       textSize =
-        typeArray.getDimensionPixelSize(R.styleable.ShimmerRibbonView_shimmer_ribbon_textSize, 12).toFloat()
+        typeArray.getDimensionPixelSize(R.styleable.ShimmerRibbonView_shimmer_ribbon_textSize, 12)
+          .toFloat()
 
       when (typeArray.getInteger(R.styleable.ShimmerRibbonView_shimmer_ribbon_textStyle, 0)) {
         0 -> typeface = Typeface.DEFAULT_BOLD
         1 -> setTypeface(Typeface.defaultFromStyle(Typeface.ITALIC), Typeface.ITALIC)
       }
     }
-    frameRotation = typeArray.getInt(R.styleable.ShimmerRibbonView_shimmer_ribbon_rotation, frameRotation)
+    frameRotation =
+      typeArray.getInt(R.styleable.ShimmerRibbonView_shimmer_ribbon_rotation, frameRotation)
   }
 
   private fun onCreateByBuilder(builder: Builder) {

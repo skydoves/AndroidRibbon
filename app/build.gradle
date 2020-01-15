@@ -15,10 +15,8 @@ android {
 }
 
 dependencies {
-    implementation "androidx.appcompat:appcompat:$versions.androidxAppcompat"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
-    implementation "androidx.recyclerview:recyclerview:$versions.recyclerView"
-    implementation "androidx.cardview:cardview:$versions.cardView"
+    implementation "com.google.android.material:material:$versions.googleMaterial"
     implementation project(":androidribbon")
 }
 
