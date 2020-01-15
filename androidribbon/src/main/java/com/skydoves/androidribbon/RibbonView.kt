@@ -26,6 +26,7 @@ import android.util.AttributeSet
 import android.view.Gravity
 import androidx.annotation.ColorInt
 import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
 import com.skydoves.androidribbon.annotations.Dp
@@ -231,6 +232,10 @@ class RibbonView : AppCompatTextView, RibbonInterface {
 
     fun setRibbonDrawable(RibbonDrawable: Drawable?): Builder = apply {
       this.ribbonDrawable = RibbonDrawable
+    }
+
+    fun setRibbonDrawableResource(@DrawableRes drawable: Int): Builder = apply {
+      this.ribbonDrawable = ContextCompat.getDrawable(this.context, drawable)
     }
 
     fun setRibbonBackgroundColor(@ColorInt color: Int): Builder = apply {

@@ -9,13 +9,13 @@
 ![gif0](https://user-images.githubusercontent.com/24237865/51105497-7873e680-182c-11e9-954a-1bf767d15312.gif) ![gif1](https://user-images.githubusercontent.com/24237865/51105671-fb953c80-182c-11e9-8288-7ce97d5474e8.gif)
 
 ## Download
-[![Download](https://api.bintray.com/packages/devmagician/maven/androidribbon/images/download.svg) ](https://bintray.com/devmagician/maven/androidribbon/_latestVersion)
+[![Download](https://api.bintray.com/packages/devmagician/maven/androidribbon/images/download.svg)](https://bintray.com/devmagician/maven/androidribbon/_latestVersion)
 [![Jitpack](https://jitpack.io/v/skydoves/AndroidRibbon.svg)](https://jitpack.io/#skydoves/AndroidRibbon)
 ### Gradle
 And add a dependency code to your **module**'s `build.gradle` file.
 ```gradle
 dependencies {  
-    implementation "com.github.skydoves:androidribbon:1.0.1"
+    implementation "com.github.skydoves:androidribbon:1.0.2"
 }
 ```
 
@@ -58,14 +58,14 @@ new RibbonView.Builder(context)
 ### create using kotlin dsl
 This is how to create `RibbonView`'s instance using kotlin dsl.
 ```kotlin
-val ribbonView = ribbonView(context) {
-      text = "Android-Ribbon"
-      textColor = Color.WHITE
-      textSize = 13f
-      textStyle = Typeface.BOLD
-      ribbonRotation = -45
-      ribbonDrawable = ContextCompat.getDrawable(context, R.drawable.ribbon02)
-}
+val ribbonView = ribbonView(this) {
+      setText("Android-Ribbon")
+      setTextColor(Color.WHITE)
+      setTextSize(13f)
+      setTextStyle(Typeface.BOLD)
+      setRibbonRotation(-45)
+      setRibbonDrawableResource(R.drawable.ribbon02)
+    }
 ```
 
 ## ShimmerRibbonView

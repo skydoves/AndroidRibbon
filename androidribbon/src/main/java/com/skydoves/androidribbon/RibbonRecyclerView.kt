@@ -19,17 +19,17 @@ package com.skydoves.androidribbon
 import android.content.Context
 import android.content.res.TypedArray
 import android.util.AttributeSet
-import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.skydoves.androidribbon.annotations.Dp
 
 /** RibbonRecyclerView helps to create [RecyclerView] that has [RibbonView] as items. */
 @Suppress("LiftReturnOrAssignment")
 class RibbonRecyclerView : RecyclerView, IRibbonList {
 
   private val ribbonAdapter: RibbonRecyclerAdapter = RibbonRecyclerAdapter()
-  private var space = 3f
   private var orientation = 1
+  @Dp private var space = 3f
 
   constructor(context: Context) : super(context) {
     onCreate()
@@ -74,7 +74,7 @@ class RibbonRecyclerView : RecyclerView, IRibbonList {
   private fun onCreate() {
     when (orientation) {
       0 -> layoutManager = LinearLayoutManager(context)
-      1 -> layoutManager = LinearLayoutManager(context, LinearLayout.HORIZONTAL, false)
+      1 -> layoutManager = LinearLayoutManager(context, HORIZONTAL, false)
     }
     addItemDecoration(RibbonTagItemDecoration(space.dp2px(resources), orientation))
     adapter = ribbonAdapter
