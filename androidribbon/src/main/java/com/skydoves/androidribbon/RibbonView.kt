@@ -42,7 +42,11 @@ fun ribbonView(context: Context, block: RibbonView.Builder.() -> Unit): RibbonVi
 
 /** RibbonView is advanced of [AppCompatTextView] for implement ribbon. */
 @Suppress("unused", "MemberVisibilityCanBePrivate")
-class RibbonView : AppCompatTextView, RibbonInterface {
+class RibbonView @JvmOverloads constructor(
+  context: Context,
+  attrs: AttributeSet? = null,
+  defStyleAttr: Int = android.R.attr.textViewStyle
+) : AppCompatTextView(context, attrs, defStyleAttr), RibbonInterface {
 
   var ribbonDrawable: Drawable? = null
     set(value) {
@@ -64,58 +68,47 @@ class RibbonView : AppCompatTextView, RibbonInterface {
       field = value
       rotation(value)
     }
-  @Dp
-  var ribbonRadius = 10f
+  @Dp var ribbonRadius = 10f
     set(value) {
       field = value
       updateRibbon()
     }
-  @Dp
-  var paddingLeft = 8f
+  @Dp var paddingLeft = 8f
     set(value) {
       field = value
       updateRibbon()
     }
-  @Dp
-  var paddingTop = 4f
+  @Dp var paddingTop = 4f
     set(value) {
       field = value
       updateRibbon()
     }
-  @Dp
-  var paddingRight = 8f
+  @Dp var paddingRight = 8f
     set(value) {
       field = value
       updateRibbon()
     }
-  @Dp
-  var paddingBottom = 4f
+  @Dp var paddingBottom = 4f
     set(value) {
       field = value
       updateRibbon()
     }
 
-  constructor(context: Context) : super(context) {
+  init {
     onCreate()
-  }
-
-  constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
-    onCreate()
-    getAttrs(attrs)
-  }
-
-  constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs,
-    defStyleAttr) {
-    onCreate()
-    getAttrs(attrs, defStyleAttr)
+    when {
+      attrs != null && defStyleAttr != android.R.attr.textViewStyle ->
+        getAttrs(attrs, defStyleAttr)
+      attrs != null -> getAttrs(attrs)
+    }
   }
 
   private fun onCreate() {
-    val gradient = GradientDrawable()
-    gradient.setColor(ribbonBackgroundColor)
-    gradient.cornerRadius = ribbonRadius
-    this.background = gradient
     this.gravity = Gravity.CENTER
+    this.background = GradientDrawable().apply {
+      setColor(ribbonBackgroundColor)
+      cornerRadius = ribbonRadius
+    }
   }
 
   private fun getAttrs(attributeSet: AttributeSet) {
