@@ -1,12 +1,24 @@
-# AndroidRibbon
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
-[![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/feb143f9abec414a83d1ea4ec928359b)](https://www.codacy.com/app/skydoves/AndroidRibbon?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=skydoves/AndroidRibbon&amp;utm_campaign=Badge_Grade)
-[![Build Status](https://travis-ci.org/skydoves/AndroidRibbon.svg?branch=master)](https://travis-ci.org/skydoves/AndroidRibbon) 
-[![JavaDoc](https://img.shields.io/badge/Javadoc-AndroidRibbon-yellow.svg)](https://skydoves.github.io/libraries/androidribbon/javadoc/androidribbon/) <br>
-:ribbon: The simple way to implement a  beautiful ribbon with the shimmering on Android. [中文語](https://github.com/skydoves/AndroidRibbon/tree/master/.github/README_CHINESE.md) <br>
+<h1 align="center">AndroidRibbon</h1>
 
-![gif0](https://user-images.githubusercontent.com/24237865/51105497-7873e680-182c-11e9-954a-1bf767d15312.gif) ![gif1](https://user-images.githubusercontent.com/24237865/51105671-fb953c80-182c-11e9-8288-7ce97d5474e8.gif)
+<p align="center">
+  <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/></a>
+  <a href="https://android-arsenal.com/api?level=16"><img alt="API" src="https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat"/></a>
+  <a href="https://www.codacy.com/app/skydoves/AndroidRibbon?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=skydoves/AndroidRibbon&amp;utm_campaign=Badge_Grade"><img alt="Codacy" src="https://api.codacy.com/project/badge/Grade/feb143f9abec414a83d1ea4ec928359b"/></a>
+  <a href="https://github.com/skydoves/AndroidRibbon/actions"><img alt="Build Status" src="https://github.com/skydoves/AndroidRibbon/workflows/Android%20CI/badge.svg"/></a> 
+  <a href="https://skydoves.github.io/libraries/androidribbon/javadoc/androidribbon/"><img alt="Javadoc" src="https://img.shields.io/badge/Javadoc-AndroidRibbon-yellow.svg"/></a> 
+  <a href="https://github.com/skydoves"><img alt="Profile" src="https://skydoves.github.io/badges/skydoves.svg"/></a> 
+</p>
+
+<p align="center">  
+:ribbon: The simple way to implement a  beautiful ribbon with the shimmering on Android. 
+    <a href="https://github.com/skydoves/AndroidRibbon/tree/master/.github/README_CHINESE.md">中文語<a/>
+</p>
+</br>
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/24237865/51105497-7873e680-182c-11e9-954a-1bf767d15312.gif" width="33%"/>
+<img src="https://user-images.githubusercontent.com/24237865/51105671-fb953c80-182c-11e9-8288-7ce97d5474e8.gif" width="33%"/>
+</p>
 
 ## Download
 [![Download](https://api.bintray.com/packages/devmagician/maven/androidribbon/images/download.svg)](https://bintray.com/devmagician/maven/androidribbon/_latestVersion)
@@ -231,7 +243,8 @@ ribbonHeaderAlign | Gravity | Gravity.START | sets an align of the header ribbon
 ribbonBottomAlign | Gravity | Gravity.CENTER | sets an align of the bottom ribbon.
 
 ## Find this library useful? :heart:
-Support it by joining __[stargazers](https://github.com/skydoves/AndroidRibbon/stargazers)__ for this repository. :star:
+Support it by joining __[stargazers](https://github.com/skydoves/AndroidRibbon/stargazers)__ for this repository. :star: <br>
+And __[follow](https://github.com/skydoves)__ me for my next creations! 🤩
 
 # License
 ```xml
