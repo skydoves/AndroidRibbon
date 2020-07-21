@@ -53,6 +53,7 @@ class RibbonView @JvmOverloads constructor(
       field = value
       updateRibbon()
     }
+
   @ColorInt
   var ribbonBackgroundColor = ContextCompat.getColor(context, R.color.colorPrimary)
     set(value) {
@@ -200,26 +201,37 @@ class RibbonView @JvmOverloads constructor(
   class Builder(val context: Context) {
     @JvmField
     var ribbonDrawable: Drawable? = null
+
     @JvmField @ColorInt
-    var ribbonBackgroundColor = ContextCompat.getColor(context, R.color.colorPrimary)
+    var ribbonBackgroundColor: Int = ContextCompat.getColor(context, R.color.colorPrimary)
+
     @JvmField
-    var ribbonRotation = 0
+    var ribbonRotation: Int = 0
+
     @JvmField @Dp
-    var ribbonRadius = 10f
+    var ribbonRadius: Float = 10f
+
     @JvmField @Dp
-    var paddingLeft = 8f
+    var paddingLeft: Float = 8f
+
     @JvmField @Dp
-    var paddingTop = 4f
+    var paddingTop: Float = 4f
+
     @JvmField @Dp
-    var paddingRight = 8f
+    var paddingRight: Float = 8f
+
     @JvmField @Dp
-    var paddingBottom = 4f
+    var paddingBottom: Float = 4f
+
     @JvmField
-    var text = ""
+    var text: CharSequence = ""
+
     @JvmField @ColorInt
     var textColor = Color.WHITE
+
     @JvmField @Sp
     var textSize = 12f
+
     @JvmField
     var textStyle = Typeface.NORMAL
 
@@ -245,7 +257,7 @@ class RibbonView @JvmOverloads constructor(
     fun setPaddingTop(@Dp value: Float): Builder = apply { this.paddingTop = value }
     fun setPaddingRight(@Dp value: Float): Builder = apply { this.paddingRight = value }
     fun setPaddingBottom(@Dp value: Float): Builder = apply { this.paddingBottom = value }
-    fun setText(value: String): Builder = apply { this.text = value }
+    fun setText(value: CharSequence): Builder = apply { this.text = value }
     fun setTextColor(@ColorInt value: Int): Builder = apply { this.textColor = value }
     fun setTextSize(@Sp value: Float): Builder = apply { this.textSize = value }
     fun setTextStyle(value: Int): Builder = apply { this.textStyle = value }

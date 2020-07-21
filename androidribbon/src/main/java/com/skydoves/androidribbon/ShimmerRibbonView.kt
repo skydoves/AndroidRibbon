@@ -160,8 +160,14 @@ class ShimmerRibbonView : ShimmerFrameLayout, RibbonInterface {
   class Builder(val context: Context) {
     @JvmField
     var ribbon = RibbonView(context)
+
     @JvmField
-    var shimmer = Shimmer.AlphaHighlightBuilder().setBaseAlpha(1.0f).setHighlightAlpha(0.5f).build()
+    var shimmer: Shimmer =
+      Shimmer
+        .AlphaHighlightBuilder()
+        .setBaseAlpha(1.0f)
+        .setHighlightAlpha(0.5f)
+        .build()
 
     /** sets [RibbonView] on builder. */
     fun setRibbonView(ribbonView: RibbonView) = apply { this.ribbon = ribbonView }
@@ -171,9 +177,9 @@ class ShimmerRibbonView : ShimmerFrameLayout, RibbonInterface {
 
     /** assembles builder's attributes and returns [ShimmerRibbonView]. */
     fun build(): ShimmerRibbonView {
-      val shimmerRibbon = ShimmerRibbonView(context)
-      shimmerRibbon.onCreateByBuilder(this)
-      return shimmerRibbon
+      return ShimmerRibbonView(context).apply {
+        onCreateByBuilder(this@Builder)
+      }
     }
   }
 }
