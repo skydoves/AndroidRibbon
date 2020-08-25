@@ -18,25 +18,22 @@ package com.skydoves.androidribbon
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.skydoves.androidribbon.databinding.ItemRibbonBinding
 
 /** RibbonRecyclerAdapter is an implementation of [RecyclerView.Adapter] that has [RibbonView] as items. */
 class RibbonRecyclerAdapter :
-  RecyclerView.Adapter<RibbonRecyclerViewHolder>(), IRibbonList {
+  RecyclerView.Adapter<RibbonRecyclerAdapter.RibbonRecyclerViewHolder>(), IRibbonList {
 
   private val ribbonViewList: MutableList<RibbonView> = mutableListOf()
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RibbonRecyclerViewHolder {
     val inflater = LayoutInflater.from(parent.context)
-    return RibbonRecyclerViewHolder(inflater.inflate(R.layout.item_ribbon, parent, false))
+    return RibbonRecyclerViewHolder(ItemRibbonBinding.inflate(inflater, parent, false))
   }
 
   override fun onBindViewHolder(holder: RibbonRecyclerViewHolder, position: Int) {
-    holder.itemView.findViewById<LinearLayout>(R.id.item_ribbon_layout).apply {
-      removeAllViews()
-      addView(ribbonViewList[position])
-    }
+    holder.bind(ribbonViewList[position])
   }
 
   /** adds a ribbon on the adapter. */
@@ -48,7 +45,7 @@ class RibbonRecyclerAdapter :
   /** adds a ribbon on the adapter by position. */
   override fun addRibbon(position: Int, ribbonView: RibbonView) {
     this.ribbonViewList.add(position, ribbonView)
-    notifyItemChanged(position)
+    notifyItemInserted(position)
   }
 
   /** adds ribbons on the adapter. */
@@ -69,18 +66,29 @@ class RibbonRecyclerAdapter :
   /** removes a ribbon on the adapter. */
   override fun removeRibbon(ribbonView: RibbonView) {
     this.ribbonViewList.remove(ribbonView)
-    notifyDataSetChanged()
+    notifyItemRemoved(ribbonViewList.indexOf(ribbonView))
   }
 
   /** removes a ribbon on the adapter by position. */
   override fun removeRibbon(position: Int) {
     this.ribbonViewList.removeAt(position)
-    notifyItemChanged(position)
+    notifyItemRemoved(position)
   }
 
   /** clears all of [RibbonView] items. */
   override fun clear() {
     this.ribbonViewList.clear()
     notifyDataSetChanged()
+  }
+
+  /** RibbonRecyclerAdapter is an implementation of [RecyclerView.ViewHolder]. */
+  class RibbonRecyclerViewHolder(
+    private val binding: ItemRibbonBinding
+  ) : RecyclerView.ViewHolder(binding.root) {
+
+    fun bind(ribbonView: RibbonView) {
+      binding.ribbonContainer.removeAllViews()
+      binding.ribbonContainer.addView(ribbonView)
+    }
   }
 }
