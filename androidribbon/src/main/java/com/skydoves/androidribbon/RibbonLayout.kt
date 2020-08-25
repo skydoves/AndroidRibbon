@@ -28,7 +28,7 @@ import android.widget.FrameLayout
  * RibbonLayout has header and bottom align ribbons.
  * They will overlap on the top with other complex child views.
  */
-@Suppress("MemberVisibilityCanBePrivate", "HasPlatformType", "unused")
+@Suppress("MemberVisibilityCanBePrivate", "unused")
 class RibbonLayout : FrameLayout, RibbonInterface {
 
   var ribbonHeaderAlign = Gravity.START

@@ -24,7 +24,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.skydoves.androidribbon.annotations.Dp
 
 /** RibbonRecyclerView helps to create [RecyclerView] that has [RibbonView] as items. */
-@Suppress("LiftReturnOrAssignment")
 class RibbonRecyclerView : RecyclerView, IRibbonList {
 
   private val ribbonAdapter: RibbonRecyclerAdapter = RibbonRecyclerAdapter()
@@ -81,42 +80,34 @@ class RibbonRecyclerView : RecyclerView, IRibbonList {
   }
 
   /** add a ribbon on the adapter. */
-  override fun addRibbon(ribbonView: RibbonView) {
+  override fun addRibbon(ribbonView: RibbonView) =
     ribbonAdapter.addRibbon(ribbonView)
-  }
 
   /** add a ribbon on the adapter by position. */
-  override fun addRibbon(position: Int, ribbonView: RibbonView) {
+  override fun addRibbon(position: Int, ribbonView: RibbonView) =
     ribbonAdapter.addRibbon(position, ribbonView)
-  }
 
   /** add ribbons on the adapter. */
-  override fun addRibbonList(ribbonViewList: List<RibbonView>) {
+  override fun addRibbonList(ribbonViewList: List<RibbonView>) =
     ribbonAdapter.addRibbonList(ribbonViewList)
-  }
 
   /** get a ribbon from the adapter. */
-  override fun getRibbonView(position: Int): RibbonView {
-    return ribbonAdapter.getRibbonView(position)
-  }
+  override fun getRibbonView(position: Int): RibbonView =
+    ribbonAdapter.getRibbonView(position)
 
   /** add ribbon from the adapter. */
-  override fun getRibbonViews(): List<RibbonView> {
-    return ribbonAdapter.getRibbonViews()
-  }
+  override fun getRibbonViews(): List<RibbonView> =
+    ribbonAdapter.getRibbonViews()
 
   /** remove a ribbon on the adapter. */
-  override fun removeRibbon(ribbonView: RibbonView) {
+  override fun removeRibbon(ribbonView: RibbonView) =
     ribbonAdapter.removeRibbon(ribbonView)
-  }
 
   /** remove a ribbon on the adapter by position. */
-  override fun removeRibbon(position: Int) {
+  override fun removeRibbon(position: Int) =
     ribbonAdapter.removeRibbon(position)
-  }
 
   /** clear adapter. */
-  override fun clear() {
+  override fun clear() =
     ribbonAdapter.clear()
-  }
 }

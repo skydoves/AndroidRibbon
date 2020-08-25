@@ -43,7 +43,7 @@ fun shimmerRibbonView(
   ShimmerRibbonView.Builder(context).apply(block).build()
 
 /** ShimmerRibbonView implements [RibbonView] on [ShimmerFrameLayout] for shimmering effect. */
-@Suppress("unused", "MemberVisibilityCanBePrivate", "HasPlatformType")
+@Suppress("unused", "MemberVisibilityCanBePrivate")
 class ShimmerRibbonView : ShimmerFrameLayout, RibbonInterface {
 
   var frameRotation = 0
@@ -58,7 +58,10 @@ class ShimmerRibbonView : ShimmerFrameLayout, RibbonInterface {
       ribbon.ribbonRotation = 0
       updateRibbon()
     }
-  var shimmer = Shimmer.AlphaHighlightBuilder().setBaseAlpha(1.0f).setHighlightAlpha(0.5f).build()
+  var shimmer: Shimmer = Shimmer.AlphaHighlightBuilder()
+    .setBaseAlpha(1.0f)
+    .setHighlightAlpha(0.5f)
+    .build()
     set(value) {
       field = value
       setShimmer(value)

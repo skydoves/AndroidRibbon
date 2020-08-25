@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-@file:Suppress("unused")
-
 package com.skydoves.androidribbon
 
 import android.content.res.Resources
@@ -23,11 +21,5 @@ import android.content.res.Resources
 /** dp size to px size */
 internal fun Float.dp2px(resources: Resources): Int {
   val scale = resources.displayMetrics.density
-  return (this * scale * 0.5f).toInt()
-}
-
-/** sp size to px size */
-internal fun Float.sp2px(resources: Resources): Int {
-  val scale = resources.displayMetrics.scaledDensity
   return (this * scale * 0.5f).toInt()
 }

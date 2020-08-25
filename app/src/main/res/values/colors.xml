@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#EC407A</color>
-    <color name="colorPrimaryDark">#AD1457</color>
-    <color name="colorAccent">#D81B60</color>
-    <color name="purple">#AA00FF</color>
-    <color name="md_indigo_300">#7986CB</color>
-    <color name="md_blue_300">#64B5F6</color>
-    <color name="md_red_800">#C62828</color>
+  <color name="colorPrimary">#EC407A</color>
+  <color name="colorPrimaryDark">#AD1457</color>
+  <color name="colorAccent">#D81B60</color>
+  <color name="purple">#AA00FF</color>
+  <color name="md_indigo_300">#7986CB</color>
+  <color name="md_blue_300">#64B5F6</color>
+  <color name="md_red_800">#C62828</color>
 </resources>
