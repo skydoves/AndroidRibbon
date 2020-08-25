@@ -55,7 +55,7 @@ class RibbonView @JvmOverloads constructor(
     }
 
   @ColorInt
-  var ribbonBackgroundColor = ContextCompat.getColor(context, R.color.colorPrimary)
+  var ribbonBackgroundColor = context.accentColor()
     set(value) {
       field = value
       background.apply {
@@ -205,7 +205,7 @@ class RibbonView @JvmOverloads constructor(
     var ribbonDrawable: Drawable? = null
 
     @JvmField @ColorInt
-    var ribbonBackgroundColor: Int = ContextCompat.getColor(context, R.color.colorPrimary)
+    var ribbonBackgroundColor: Int = context.accentColor()
 
     @JvmField
     var ribbonRotation: Int = 0
