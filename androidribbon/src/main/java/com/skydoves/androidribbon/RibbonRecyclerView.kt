@@ -26,9 +26,10 @@ import com.skydoves.androidribbon.annotations.Dp
 /** RibbonRecyclerView helps to create [RecyclerView] that has [RibbonView] as items. */
 class RibbonRecyclerView : RecyclerView, IRibbonList {
 
+  @Dp private var space: Float = 3f
+  private var orientation: Int = HORIZONTAL
+
   private val ribbonAdapter: RibbonRecyclerAdapter = RibbonRecyclerAdapter()
-  private var orientation = 1
-  @Dp private var space = 3f
 
   constructor(context: Context) : super(context) {
     onCreate()
@@ -71,10 +72,7 @@ class RibbonRecyclerView : RecyclerView, IRibbonList {
   }
 
   private fun onCreate() {
-    when (orientation) {
-      0 -> layoutManager = LinearLayoutManager(context)
-      1 -> layoutManager = LinearLayoutManager(context, HORIZONTAL, false)
-    }
+    layoutManager = LinearLayoutManager(context, orientation, false)
     addItemDecoration(RibbonTagItemDecoration(space.dp2px(resources), orientation))
     adapter = ribbonAdapter
   }
@@ -108,6 +106,5 @@ class RibbonRecyclerView : RecyclerView, IRibbonList {
     ribbonAdapter.removeRibbon(position)
 
   /** clear adapter. */
-  override fun clear() =
-    ribbonAdapter.clear()
+  override fun clear() = ribbonAdapter.clear()
 }

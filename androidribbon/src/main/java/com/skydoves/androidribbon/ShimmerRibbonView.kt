@@ -51,6 +51,7 @@ class ShimmerRibbonView : ShimmerFrameLayout, RibbonInterface {
       field = value
       rotation(value)
     }
+
   var ribbon = RibbonView(context)
     set(value) {
       field = value
@@ -58,6 +59,7 @@ class ShimmerRibbonView : ShimmerFrameLayout, RibbonInterface {
       ribbon.ribbonRotation = 0
       updateRibbon()
     }
+
   var shimmer: Shimmer = Shimmer.AlphaHighlightBuilder()
     .setBaseAlpha(1.0f)
     .setHighlightAlpha(0.5f)
@@ -163,6 +165,7 @@ class ShimmerRibbonView : ShimmerFrameLayout, RibbonInterface {
 
   /** [ShimmerRibbonView] builder class. */
   class Builder(val context: Context) {
+
     @JvmField
     var ribbon = RibbonView(context)
 

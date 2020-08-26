@@ -13,8 +13,8 @@
   <declare-styleable name="RibbonRecyclerView">
     <attr name="ribbon_recycler_space" format="dimension" />
     <attr name="ribbon_recycler_orientation" format="enum">
-      <enum name="vertical" value="0" />
-      <enum name="horizontal" value="1" />
+      <enum name="horizontal" value="0" />
+      <enum name="vertical" value="1" />
     </attr>
   </declare-styleable>
   <declare-styleable name="ShimmerRibbonView">

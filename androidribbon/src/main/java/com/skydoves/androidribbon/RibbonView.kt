@@ -36,7 +36,6 @@ import com.skydoves.androidribbon.annotations.Sp
 annotation class RibbonDsl
 
 /** create a [RibbonView] by [RibbonView.Builder] using dsl. */
-@Suppress("unused")
 fun ribbonView(context: Context, block: RibbonView.Builder.() -> Unit): RibbonView =
   RibbonView.Builder(context).apply(block).build()
 
@@ -48,50 +47,81 @@ class RibbonView @JvmOverloads constructor(
   defStyleAttr: Int = android.R.attr.textViewStyle
 ) : AppCompatTextView(context, attrs, defStyleAttr), RibbonInterface {
 
-  var ribbonDrawable: Drawable? = null
+  private var _ribbonDrawable: Drawable? = null
+
+  @ColorInt
+  private var _ribbonBackgroundColor: Int = context.accentColor()
+
+  private var _ribbonRotation: Int = 0
+
+  @Dp
+  private var _ribbonRadius: Float = 10f
+
+  @Dp
+  private var _paddingLeft: Float = 8f
+
+  @Dp
+  private var _paddingTop: Float = 4f
+
+  @Dp
+  private var _paddingRight: Float = 8f
+
+  @Dp
+  private var _paddingBottom: Float = 4f
+
+  var ribbonDrawable: Drawable?
+    get() = _ribbonDrawable
     set(value) {
-      field = value
+      _ribbonDrawable = value
       updateRibbon()
     }
 
-  @ColorInt
-  var ribbonBackgroundColor = context.accentColor()
-    set(value) {
-      field = value
-      background.apply {
-        if (this is GradientDrawable) {
-          this.setColor(value)
-        }
-      }
-    }
-  var ribbonRotation = 0
-    set(value) {
-      field = value
-      rotation(value)
-    }
-  @Dp var ribbonRadius = 10f
-    set(value) {
-      field = value
+  var ribbonBackgroundColor: Int
+    @ColorInt get() = _ribbonBackgroundColor
+    set(@ColorInt value) {
+      _ribbonBackgroundColor = value
       updateRibbon()
     }
-  @Dp var paddingLeft = 8f
+
+  var ribbonRotation: Int
+    get() = _ribbonRotation
     set(value) {
-      field = value
+      _ribbonRotation = value
       updateRibbon()
     }
-  @Dp var paddingTop = 4f
-    set(value) {
-      field = value
+
+  var ribbonRadius: Float
+    @Dp get() = _ribbonRadius
+    set(@Dp value) {
+      _ribbonRadius = value
       updateRibbon()
     }
-  @Dp var paddingRight = 8f
-    set(value) {
-      field = value
+
+  var paddingLeft: Float
+    @Dp get() = _paddingLeft
+    set(@Dp value) {
+      _paddingLeft = value
       updateRibbon()
     }
-  @Dp var paddingBottom = 4f
-    set(value) {
-      field = value
+
+  var paddingTop: Float
+    @Dp get() = _paddingTop
+    set(@Dp value) {
+      _paddingTop = value
+      updateRibbon()
+    }
+
+  var paddingRight: Float
+    @Dp get() = _paddingRight
+    set(@Dp value) {
+      _paddingRight = value
+      updateRibbon()
+    }
+
+  var paddingBottom: Float
+    @Dp get() = _paddingBottom
+    set(@Dp value) {
+      _paddingBottom = value
       updateRibbon()
     }
 
@@ -132,36 +162,35 @@ class RibbonView @JvmOverloads constructor(
   }
 
   private fun setTypeArray(typeArray: TypedArray) {
-    this.ribbonDrawable = typeArray.getDrawable(R.styleable.RibbonView_ribbon_drawable)
-    this.ribbonBackgroundColor =
+    _ribbonDrawable = typeArray.getDrawable(R.styleable.RibbonView_ribbon_drawable)
+    _ribbonBackgroundColor =
       typeArray.getColor(R.styleable.RibbonView_ribbon_background_color, ribbonBackgroundColor)
-    this.ribbonRadius =
+    _ribbonRadius =
       typeArray.getDimension(R.styleable.RibbonView_ribbon_ribbonRadius, ribbonRadius)
-    this.ribbonRotation = typeArray.getInt(R.styleable.RibbonView_ribbon_rotation, ribbonRotation)
-    this.paddingLeft =
+    _ribbonRotation = typeArray.getInt(R.styleable.RibbonView_ribbon_rotation, ribbonRotation)
+    _paddingLeft =
       typeArray.getDimension(R.styleable.RibbonView_ribbon_padding_left, paddingLeft)
-    this.paddingTop = typeArray.getDimension(R.styleable.RibbonView_ribbon_padding_top, paddingTop)
-    this.paddingRight =
+    _paddingTop = typeArray.getDimension(R.styleable.RibbonView_ribbon_padding_top, paddingTop)
+    _paddingRight =
       typeArray.getDimension(R.styleable.RibbonView_ribbon_padding_right, paddingRight)
-    this.paddingBottom =
+    _paddingBottom =
       typeArray.getDimension(R.styleable.RibbonView_ribbon_padding_bottom, paddingBottom)
   }
 
   /** initialize attributes by [RibbonView.Builder] */
   private fun onCreateByBuilder(builder: Builder) {
-    this.ribbonDrawable = builder.ribbonDrawable
-    this.ribbonBackgroundColor = builder.ribbonBackgroundColor
-    this.ribbonRadius = builder.ribbonRadius
-    this.ribbonRotation = builder.ribbonRotation
-    this.paddingLeft = builder.paddingLeft
-    this.paddingTop = builder.paddingTop
-    this.paddingRight = builder.paddingRight
-    this.paddingBottom = builder.paddingBottom
-    this.text = builder.text
+    _ribbonDrawable = builder.ribbonDrawable
+    _ribbonBackgroundColor = builder.ribbonBackgroundColor
+    _ribbonRadius = builder.ribbonRadius
+    _ribbonRotation = builder.ribbonRotation
+    _paddingLeft = builder.paddingLeft
+    _paddingTop = builder.paddingTop
+    _paddingRight = builder.paddingRight
+    _paddingBottom = builder.paddingBottom
+    text = builder.text
+    textSize = builder.textSize
     setTextColor(builder.textColor)
-    this.textSize = builder.textSize
     setTypeface(typeface, builder.textStyle)
-
     updateRibbon()
   }
 
@@ -177,17 +206,10 @@ class RibbonView @JvmOverloads constructor(
       paddingLeft.dp2px(resources),
       paddingTop.dp2px(resources),
       paddingRight.dp2px(resources),
-      paddingBottom.dp2px(resources)
-    )
-
-    this.ribbonDrawable?.let {
-      background = ribbonDrawable
-    } ?: let {
-      if (background is GradientDrawable) {
-        val bgShape = background as GradientDrawable
-        bgShape.cornerRadius = ribbonRadius.dp2px(resources).toFloat()
-        bgShape.setColor(ribbonBackgroundColor)
-      }
+      paddingBottom.dp2px(resources))
+    background = ribbonDrawable ?: GradientDrawable().apply {
+      cornerRadius = ribbonRadius.dp2px(resources).toFloat()
+      setColor(ribbonBackgroundColor)
     }
   }
 
@@ -201,6 +223,7 @@ class RibbonView @JvmOverloads constructor(
   /** Builder class for creating [RibbonView]. */
   @RibbonDsl
   class Builder(val context: Context) {
+
     @JvmField
     var ribbonDrawable: Drawable? = null
 
