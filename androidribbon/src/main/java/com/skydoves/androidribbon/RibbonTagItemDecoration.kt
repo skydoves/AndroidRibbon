@@ -33,8 +33,8 @@ class RibbonTagItemDecoration(
   ) {
     super.getItemOffsets(outRect, view, parent, state)
     when (orientation) {
-      0 -> outRect.bottom = space
-      1 -> outRect.right = space
+      RecyclerView.HORIZONTAL -> outRect.right = space
+      RecyclerView.VERTICAL -> outRect.bottom = space
     }
   }
 }

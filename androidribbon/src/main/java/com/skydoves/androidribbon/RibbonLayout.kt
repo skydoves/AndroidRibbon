@@ -31,12 +31,12 @@ import android.widget.FrameLayout
 @Suppress("MemberVisibilityCanBePrivate", "unused")
 class RibbonLayout : FrameLayout, RibbonInterface {
 
-  var ribbonHeaderAlign = Gravity.START
+  var ribbonHeaderAlign: Int = Gravity.START
     set(value) {
       field = value
       updateRibbon()
     }
-  var ribbonBottomAlign = Gravity.CENTER
+  var ribbonBottomAlign: Int = Gravity.CENTER
     set(value) {
       field = value
       updateRibbon()

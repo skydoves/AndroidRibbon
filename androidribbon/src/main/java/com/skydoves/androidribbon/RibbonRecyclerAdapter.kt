@@ -28,7 +28,7 @@ class RibbonRecyclerAdapter :
   private val ribbonViewList: MutableList<RibbonView> = mutableListOf()
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RibbonRecyclerViewHolder {
-    val inflater = LayoutInflater.from(parent.context)
+    val inflater: LayoutInflater = LayoutInflater.from(parent.context)
     return RibbonRecyclerViewHolder(ItemRibbonBinding.inflate(inflater, parent, false))
   }
 
