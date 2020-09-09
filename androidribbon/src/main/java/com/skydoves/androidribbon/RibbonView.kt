@@ -206,7 +206,8 @@ class RibbonView @JvmOverloads constructor(
       paddingLeft.dp2px(resources),
       paddingTop.dp2px(resources),
       paddingRight.dp2px(resources),
-      paddingBottom.dp2px(resources))
+      paddingBottom.dp2px(resources)
+    )
     background = ribbonDrawable ?: GradientDrawable().apply {
       cornerRadius = ribbonRadius.dp2px(resources).toFloat()
       setColor(ribbonBackgroundColor)

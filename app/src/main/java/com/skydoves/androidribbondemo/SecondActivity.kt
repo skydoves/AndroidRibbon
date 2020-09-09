@@ -29,22 +29,28 @@ class SecondActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_second)
 
-    ribbonRecyclerView.addRibbon(ribbonView = ribbonView(this) {
-      setText("item1")
-      setTextColor(Color.WHITE)
-      setRibbonBackgroundColorResource(R.color.colorPrimaryDark)
-      setRibbonRadius(10f)
-    })
-    ribbonRecyclerView.addRibbon(ribbonView = ribbonView(this) {
-      setText("item2")
-      setTextColor(Color.WHITE)
-      setRibbonBackgroundColorResource(R.color.purple)
-    })
-    ribbonRecyclerView.addRibbon(ribbonView = ribbonView(this) {
-      setText("item3")
-      setTextColor(Color.WHITE)
-      setRibbonBackgroundColorResource(R.color.md_indigo_300)
-    })
+    ribbonRecyclerView.addRibbon(
+      ribbonView = ribbonView(this) {
+        setText("item1")
+        setTextColor(Color.WHITE)
+        setRibbonBackgroundColorResource(R.color.colorPrimaryDark)
+        setRibbonRadius(10f)
+      }
+    )
+    ribbonRecyclerView.addRibbon(
+      ribbonView = ribbonView(this) {
+        setText("item2")
+        setTextColor(Color.WHITE)
+        setRibbonBackgroundColorResource(R.color.purple)
+      }
+    )
+    ribbonRecyclerView.addRibbon(
+      ribbonView = ribbonView(this) {
+        setText("item3")
+        setTextColor(Color.WHITE)
+        setRibbonBackgroundColorResource(R.color.md_indigo_300)
+      }
+    )
     ribbonRecyclerView.addRibbon(
       ribbonView = RibbonView.Builder(this)
         .setText("Item4")

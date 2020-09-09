@@ -75,8 +75,11 @@ class ShimmerRibbonView : ShimmerFrameLayout, RibbonInterface {
     getAttrs(attrs)
   }
 
-  constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs,
-    defStyleAttr) {
+  constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(
+    context,
+    attrs,
+    defStyleAttr
+  ) {
     getAttrs(attrs, defStyleAttr)
   }
 
@@ -107,23 +110,32 @@ class ShimmerRibbonView : ShimmerFrameLayout, RibbonInterface {
         ribbonBackgroundColor
       )
       ribbonRadius =
-        typeArray.getDimension(R.styleable.ShimmerRibbonView_shimmer_ribbon_ribbonRadius,
-          ribbonRadius)
+        typeArray.getDimension(
+          R.styleable.ShimmerRibbonView_shimmer_ribbon_ribbonRadius,
+          ribbonRadius
+        )
       paddingLeft =
-        typeArray.getDimension(R.styleable.ShimmerRibbonView_shimmer_ribbon_padding_left,
-          paddingLeft)
+        typeArray.getDimension(
+          R.styleable.ShimmerRibbonView_shimmer_ribbon_padding_left,
+          paddingLeft
+        )
       paddingTop =
         typeArray.getDimension(R.styleable.ShimmerRibbonView_shimmer_ribbon_padding_top, paddingTop)
       paddingRight =
-        typeArray.getDimension(R.styleable.ShimmerRibbonView_shimmer_ribbon_padding_right,
-          paddingRight)
+        typeArray.getDimension(
+          R.styleable.ShimmerRibbonView_shimmer_ribbon_padding_right,
+          paddingRight
+        )
       paddingBottom =
-        typeArray.getDimension(R.styleable.ShimmerRibbonView_shimmer_ribbon_padding_bottom,
-          paddingBottom)
+        typeArray.getDimension(
+          R.styleable.ShimmerRibbonView_shimmer_ribbon_padding_bottom,
+          paddingBottom
+        )
     }.apply {
       text = typeArray.getString(R.styleable.ShimmerRibbonView_shimmer_ribbon_text)
       setTextColor(
-        typeArray.getColor(R.styleable.ShimmerRibbonView_shimmer_ribbon_textColor, Color.WHITE))
+        typeArray.getColor(R.styleable.ShimmerRibbonView_shimmer_ribbon_textColor, Color.WHITE)
+      )
       textSize =
         typeArray.getDimensionPixelSize(R.styleable.ShimmerRibbonView_shimmer_ribbon_textSize, 12)
           .toFloat()

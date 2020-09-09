@@ -58,8 +58,11 @@ class RibbonLayout : FrameLayout, RibbonInterface {
     getAttrs(attrs)
   }
 
-  constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs,
-    defStyleAttr) {
+  constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(
+    context,
+    attrs,
+    defStyleAttr
+  ) {
     getAttrs(attrs, defStyleAttr)
   }
 

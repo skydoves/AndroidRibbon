@@ -40,8 +40,11 @@ class RibbonRecyclerView : RecyclerView, IRibbonList {
     onCreate()
   }
 
-  constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs,
-    defStyleAttr) {
+  constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(
+    context,
+    attrs,
+    defStyleAttr
+  ) {
     getAttrs(attrs, defStyleAttr)
     onCreate()
   }
