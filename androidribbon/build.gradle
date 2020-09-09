@@ -17,6 +17,10 @@ android {
     }
 }
 
+kotlin {
+    explicitApiWarning()
+}
+
 dependencies {
     implementation "androidx.appcompat:appcompat:$versions.androidxAppcompat"
     implementation "androidx.recyclerview:recyclerview:$versions.recyclerView"
