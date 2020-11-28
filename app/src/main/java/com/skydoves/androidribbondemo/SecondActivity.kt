@@ -21,42 +21,46 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.skydoves.androidribbon.RibbonView
 import com.skydoves.androidribbon.ribbonView
-import kotlinx.android.synthetic.main.activity_second.ribbonRecyclerView
+import com.skydoves.androidribbondemo.databinding.ActivitySecondBinding
 
 class SecondActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_second)
 
-    ribbonRecyclerView.addRibbon(
-      ribbonView = ribbonView(this) {
-        setText("item1")
-        setTextColor(Color.WHITE)
-        setRibbonBackgroundColorResource(R.color.colorPrimaryDark)
-        setRibbonRadius(10f)
-      }
-    )
-    ribbonRecyclerView.addRibbon(
-      ribbonView = ribbonView(this) {
-        setText("item2")
-        setTextColor(Color.WHITE)
-        setRibbonBackgroundColorResource(R.color.purple)
-      }
-    )
-    ribbonRecyclerView.addRibbon(
-      ribbonView = ribbonView(this) {
-        setText("item3")
-        setTextColor(Color.WHITE)
-        setRibbonBackgroundColorResource(R.color.md_indigo_300)
-      }
-    )
-    ribbonRecyclerView.addRibbon(
-      ribbonView = RibbonView.Builder(this)
-        .setText("Item4")
-        .setTextColor(Color.WHITE)
-        .setRibbonBackgroundColorResource(R.color.md_blue_300)
-        .build()
-    )
+    val binding = ActivitySecondBinding.inflate(layoutInflater)
+    setContentView(binding.root)
+
+    with(binding) {
+      ribbonRecyclerView.addRibbon(
+        ribbonView = ribbonView(this@SecondActivity) {
+          setText("item1")
+          setTextColor(Color.WHITE)
+          setRibbonBackgroundColorResource(R.color.colorPrimaryDark)
+          setRibbonRadius(10f)
+        }
+      )
+      ribbonRecyclerView.addRibbon(
+        ribbonView = ribbonView(this@SecondActivity) {
+          setText("item2")
+          setTextColor(Color.WHITE)
+          setRibbonBackgroundColorResource(R.color.purple)
+        }
+      )
+      ribbonRecyclerView.addRibbon(
+        ribbonView = ribbonView(this@SecondActivity) {
+          setText("item3")
+          setTextColor(Color.WHITE)
+          setRibbonBackgroundColorResource(R.color.md_indigo_300)
+        }
+      )
+      ribbonRecyclerView.addRibbon(
+        ribbonView = RibbonView.Builder(this@SecondActivity)
+          .setText("Item4")
+          .setTextColor(Color.WHITE)
+          .setRibbonBackgroundColorResource(R.color.md_blue_300)
+          .build()
+      )
+    }
   }
 }
