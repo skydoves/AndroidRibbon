@@ -19,7 +19,7 @@ package com.skydoves.androidribbon
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.skydoves.androidribbon.databinding.ItemRibbonBinding
+import com.skydoves.androidribbon.databinding.ItemRibbonAndroidribbonSkydovesBinding
 
 /** RibbonRecyclerAdapter is an implementation of [RecyclerView.Adapter] that has [RibbonView] as items. */
 class RibbonRecyclerAdapter :
@@ -29,7 +29,9 @@ class RibbonRecyclerAdapter :
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RibbonRecyclerViewHolder {
     val inflater: LayoutInflater = LayoutInflater.from(parent.context)
-    return RibbonRecyclerViewHolder(ItemRibbonBinding.inflate(inflater, parent, false))
+    return RibbonRecyclerViewHolder(
+      ItemRibbonAndroidribbonSkydovesBinding.inflate(inflater, parent, false)
+    )
   }
 
   override fun onBindViewHolder(holder: RibbonRecyclerViewHolder, position: Int) {
@@ -83,7 +85,7 @@ class RibbonRecyclerAdapter :
 
   /** RibbonRecyclerAdapter is an implementation of [RecyclerView.ViewHolder]. */
   class RibbonRecyclerViewHolder(
-    private val binding: ItemRibbonBinding
+    private val binding: ItemRibbonAndroidribbonSkydovesBinding
   ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(ribbonView: RibbonView) {
