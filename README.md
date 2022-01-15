@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">  
-:ribbon: The simple way to implement a  beautiful ribbon with the shimmering on Android.
+:ribbon: A fancy way to implement beautiful ribbons with shimmer effects for Android.
 </p>
 </br>
 
