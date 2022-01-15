@@ -18,8 +18,9 @@ package com.skydoves.androidribbon
 
 import android.content.res.Resources
 
-/** dp size to px size */
-internal fun Float.dp2px(resources: Resources): Int {
-  val scale = resources.displayMetrics.density
-  return (this * scale * 0.5f).toInt()
-}
+/** Returns a pixel size from a dp size */
+internal val Float.dp2px: Int
+  @JvmSynthetic get() {
+    val scale = Resources.getSystem().displayMetrics.density
+    return (this * scale * 0.5f).toInt()
+  }

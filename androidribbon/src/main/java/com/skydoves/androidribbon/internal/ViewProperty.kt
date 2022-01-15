@@ -35,8 +35,8 @@ internal fun <T : Any?> RibbonInterface.viewProperty(
 ): ViewPropertyDelegate<T> {
   return ViewPropertyDelegate(
     defaultValue = defaultValue,
-    invalidate = invalidate,
-    invalidator = { updateRibbon() }
+    viewInvalidator = invalidate,
+    ribbonInvalidator = { updateRibbon() }
   )
 }
 
@@ -44,14 +44,14 @@ internal fun <T : Any?> RibbonInterface.viewProperty(
  * A delegate class to invalidate [RibbonView] class if the [propertyValue] has been updated by the setter.
  *
  * @param defaultValue A default value for this property.
- * @param invalidator An executable lambda function to invalidate [RibbonView].
+ * @param ribbonInvalidator An executable lambda function to invalidate [RibbonView].
  *
  * @return A readable and writable property.
  */
 internal class ViewPropertyDelegate<T : Any?>(
   defaultValue: T,
-  private val invalidator: () -> Unit,
-  private val invalidate: (value: T) -> Unit
+  private val ribbonInvalidator: () -> Unit,
+  private val viewInvalidator: (value: T) -> Unit
 ) : ReadWriteProperty<Any?, T> {
 
   private var propertyValue: T = defaultValue
@@ -63,8 +63,8 @@ internal class ViewPropertyDelegate<T : Any?>(
   override fun setValue(thisRef: Any?, property: KProperty<*>, value: T) {
     if (propertyValue != value) {
       propertyValue = value
-      invalidator.invoke()
-      invalidate.invoke(value)
+      ribbonInvalidator.invoke()
+      viewInvalidator.invoke(value)
     }
   }
 }

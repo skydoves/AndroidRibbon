@@ -20,14 +20,15 @@ import android.content.Context
 import android.os.Build
 import android.util.TypedValue
 
-/** gets an accent color. */
-internal fun Context.accentColor(): Int {
-  val colorAttr: Int = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-    R.attr.colorAccent
-  } else {
-    resources.getIdentifier("colorAccent", "attr", packageName)
+/** Returns a color of the accent of the application. */
+internal val Context.accentColor: Int
+  get() {
+    val colorAttr: Int = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+      R.attr.colorAccent
+    } else {
+      resources.getIdentifier("colorAccent", "attr", packageName)
+    }
+    val outValue = TypedValue()
+    theme.resolveAttribute(colorAttr, outValue, true)
+    return outValue.data
   }
-  val outValue = TypedValue()
-  theme.resolveAttribute(colorAttr, outValue, true)
-  return outValue.data
-}
