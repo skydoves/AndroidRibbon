@@ -16,6 +16,7 @@
 
 package com.skydoves.androidribbon
 
+/** An interface to define functions that collects for List of [RibbonView]-s. */
 internal interface IRibbonList {
 
   fun addRibbon(ribbonView: RibbonView)

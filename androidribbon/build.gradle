@@ -1,6 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'org.jetbrains.dokka'
+apply plugin: 'binary-compatibility-validator'
+
 apply from: "$rootDir/dependencies.gradle"
 
 android {
@@ -11,9 +13,23 @@ android {
         versionCode versions.versionCode
         versionName versions.versionName
     }
+
     buildFeatures {
         viewBinding true
         buildConfig false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    lintOptions {
+        abortOnError false
     }
 }
 

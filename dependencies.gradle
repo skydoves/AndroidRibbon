@@ -1,18 +1,18 @@
 ext.versions = [
     minSdk           : 16,
-    compileSdk       : 30,
+    compileSdk       : 31,
     versionCode      : 4,
     versionName      : '1.0.3',
 
-    gradleBuildTool  : '4.1.1',
-    spotlessGradle   : '5.9.0',
-    ktlintGradle     : '0.40.0',
-    dokkaGradle      : '1.4.20',
-    mavenPublish     : '0.13.0',
-    versionPlugin    : '0.21.0',
+    gradleBuildTool  : '7.0.2',
+    spotlessGradle   : '6.1.0',
+    ktlintGradle     : '0.43.2',
+    dokkaGradle      : '1.5.31',
+    binaryValidator  : '0.8.0',
+    mavenPublish     : '0.18.0',
 
-    kotlin           : '1.4.20',
-    androidxAppcompat: '1.2.0',
+    kotlin           : '1.5.31',
+    androidxAppcompat: '1.4.0',
     recyclerView     : '1.1.0',
     shimmer          : '0.5.0',
 

@@ -23,6 +23,7 @@ import android.graphics.Typeface
 import android.util.AttributeSet
 import com.facebook.shimmer.Shimmer
 import com.facebook.shimmer.ShimmerFrameLayout
+import com.skydoves.androidribbon.internal.viewProperty
 
 /** create a [Shimmer] by [Shimmer.AlphaHighlightBuilder] using dsl. */
 @Suppress("unused")
@@ -52,22 +53,19 @@ class ShimmerRibbonView : ShimmerFrameLayout, RibbonInterface {
       rotation(value)
     }
 
-  var ribbon = RibbonView(context)
-    set(value) {
-      field = value
-      frameRotation = ribbon.ribbonRotation
-      ribbon.ribbonRotation = 0
-      updateRibbon()
-    }
+  var ribbon: RibbonView by viewProperty(RibbonView(context)) {
+    frameRotation = ribbon.ribbonRotation
+    ribbon.ribbonRotation = 0
+  }
 
-  var shimmer: Shimmer = Shimmer.AlphaHighlightBuilder()
-    .setBaseAlpha(1.0f)
-    .setHighlightAlpha(0.5f)
-    .build()
-    set(value) {
-      field = value
-      setShimmer(value)
-    }
+  var shimmer: Shimmer by viewProperty(
+    Shimmer.AlphaHighlightBuilder()
+      .setBaseAlpha(1.0f)
+      .setHighlightAlpha(0.5f)
+      .build()
+  ) {
+    setShimmer(it)
+  }
 
   constructor(context: Context) : super(context)
 

@@ -3,15 +3,13 @@
 <p align="center">
   <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/></a>
   <a href="https://android-arsenal.com/api?level=16"><img alt="API" src="https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat"/></a>
-  <a href="https://www.codacy.com/app/skydoves/AndroidRibbon?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=skydoves/AndroidRibbon&amp;utm_campaign=Badge_Grade"><img alt="Codacy" src="https://api.codacy.com/project/badge/Grade/feb143f9abec414a83d1ea4ec928359b"/></a>
   <a href="https://github.com/skydoves/AndroidRibbon/actions"><img alt="Build Status" src="https://github.com/skydoves/AndroidRibbon/workflows/Android%20CI/badge.svg"/></a> 
   <a href="https://skydoves.github.io/libraries/androidribbon/javadoc/androidribbon/"><img alt="Javadoc" src="https://img.shields.io/badge/Javadoc-AndroidRibbon-yellow.svg"/></a> 
   <a href="https://github.com/skydoves"><img alt="Profile" src="https://skydoves.github.io/badges/skydoves.svg"/></a> 
 </p>
 
 <p align="center">  
-:ribbon: The simple way to implement a  beautiful ribbon with the shimmering on Android. 
-    <a href="https://github.com/skydoves/AndroidRibbon/tree/master/.github/README_CHINESE.md">中文語<a/>
+:ribbon: A fancy way to implement beautiful ribbons with shimmer effects for Android.
 </p>
 </br>
 
@@ -24,7 +22,7 @@
 [![Maven Central](https://img.shields.io/maven-central/v/com.github.skydoves/androidribbon.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.github.skydoves%22%20AND%20a:%22androidribbon%22)
 [![Jitpack](https://jitpack.io/v/skydoves/AndroidRibbon.svg)](https://jitpack.io/#skydoves/AndroidRibbon)
 ### Gradle
-Add below codes to your **root** `build.gradle` file (not your module build.gradle file).
+Add the codes below to your **root** `build.gradle` file (not your module build.gradle file):
 ```gradle
 allprojects {
     repositories {
@@ -32,7 +30,7 @@ allprojects {
     }
 }
 ```
-And add a dependency code to your **module**'s `build.gradle` file.
+Next, add the dependency below to your **module**'s `build.gradle` file:
 ```gradle
 dependencies {  
     implementation "com.github.skydoves:androidribbon:1.0.3"
@@ -40,7 +38,7 @@ dependencies {
 ```
 
 ## Usage
-Add following XML namespace inside your XML layout file.
+Add XML namespace inside your XML layout file as in the following:
 
 ```gradle
 xmlns:app="http://schemas.android.com/apk/res-auto"
