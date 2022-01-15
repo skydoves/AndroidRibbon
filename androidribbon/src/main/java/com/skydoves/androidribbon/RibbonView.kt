@@ -31,6 +31,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
 import com.skydoves.androidribbon.annotations.Dp
 import com.skydoves.androidribbon.annotations.Sp
+import com.skydoves.androidribbon.internal.viewProperty
 
 @DslMarker
 annotation class RibbonDsl
@@ -47,83 +48,27 @@ class RibbonView @JvmOverloads constructor(
   defStyleAttr: Int = android.R.attr.textViewStyle
 ) : AppCompatTextView(context, attrs, defStyleAttr), RibbonInterface {
 
-  private var _ribbonDrawable: Drawable? = null
+  var ribbonDrawable: Drawable? by viewProperty(null)
 
-  @ColorInt
-  private var _ribbonBackgroundColor: Int = context.accentColor()
+  @get:ColorInt
+  var ribbonBackgroundColor: Int by viewProperty(context.accentColor)
 
-  private var _ribbonRotation: Int = 0
+  var ribbonRotation: Int by viewProperty(0)
 
-  @Dp
-  private var _ribbonRadius: Float = 10f
+  @get:Dp
+  var ribbonRadius: Float by viewProperty(10f)
 
-  @Dp
-  private var _paddingLeft: Float = 8f
+  @get:Dp
+  var paddingLeft: Float by viewProperty(8f)
 
-  @Dp
-  private var _paddingTop: Float = 4f
+  @get:Dp
+  var paddingTop: Float by viewProperty(4f)
 
-  @Dp
-  private var _paddingRight: Float = 8f
+  @get:Dp
+  var paddingRight: Float by viewProperty(8f)
 
-  @Dp
-  private var _paddingBottom: Float = 4f
-
-  var ribbonDrawable: Drawable?
-    get() = _ribbonDrawable
-    set(value) {
-      _ribbonDrawable = value
-      updateRibbon()
-    }
-
-  var ribbonBackgroundColor: Int
-    @ColorInt get() = _ribbonBackgroundColor
-    set(@ColorInt value) {
-      _ribbonBackgroundColor = value
-      updateRibbon()
-    }
-
-  var ribbonRotation: Int
-    get() = _ribbonRotation
-    set(value) {
-      _ribbonRotation = value
-      updateRibbon()
-    }
-
-  var ribbonRadius: Float
-    @Dp get() = _ribbonRadius
-    set(@Dp value) {
-      _ribbonRadius = value
-      updateRibbon()
-    }
-
-  var paddingLeft: Float
-    @Dp get() = _paddingLeft
-    set(@Dp value) {
-      _paddingLeft = value
-      updateRibbon()
-    }
-
-  var paddingTop: Float
-    @Dp get() = _paddingTop
-    set(@Dp value) {
-      _paddingTop = value
-      updateRibbon()
-    }
-
-  var paddingRight: Float
-    @Dp get() = _paddingRight
-    set(@Dp value) {
-      _paddingRight = value
-      updateRibbon()
-    }
-
-  var paddingBottom: Float
-    @Dp get() = _paddingBottom
-    set(@Dp value) {
-      _paddingBottom = value
-      updateRibbon()
-    }
+  @get:Dp
+  var paddingBottom: Float by viewProperty(4f)
 
   init {
     onCreate()
@@ -162,31 +107,31 @@ class RibbonView @JvmOverloads constructor(
   }
 
   private fun setTypeArray(typeArray: TypedArray) {
-    _ribbonDrawable = typeArray.getDrawable(R.styleable.RibbonView_ribbon_drawable)
-    _ribbonBackgroundColor =
+    ribbonDrawable = typeArray.getDrawable(R.styleable.RibbonView_ribbon_drawable)
+    ribbonBackgroundColor =
       typeArray.getColor(R.styleable.RibbonView_ribbon_background_color, ribbonBackgroundColor)
-    _ribbonRadius =
+    ribbonRadius =
       typeArray.getDimension(R.styleable.RibbonView_ribbon_ribbonRadius, ribbonRadius)
-    _ribbonRotation = typeArray.getInt(R.styleable.RibbonView_ribbon_rotation, ribbonRotation)
-    _paddingLeft =
+    ribbonRotation = typeArray.getInt(R.styleable.RibbonView_ribbon_rotation, ribbonRotation)
+    paddingLeft =
       typeArray.getDimension(R.styleable.RibbonView_ribbon_padding_left, paddingLeft)
-    _paddingTop = typeArray.getDimension(R.styleable.RibbonView_ribbon_padding_top, paddingTop)
-    _paddingRight =
+    paddingTop = typeArray.getDimension(R.styleable.RibbonView_ribbon_padding_top, paddingTop)
+    paddingRight =
       typeArray.getDimension(R.styleable.RibbonView_ribbon_padding_right, paddingRight)
-    _paddingBottom =
+    paddingBottom =
       typeArray.getDimension(R.styleable.RibbonView_ribbon_padding_bottom, paddingBottom)
   }
 
   /** initialize attributes by [RibbonView.Builder] */
   private fun onCreateByBuilder(builder: Builder) {
-    _ribbonDrawable = builder.ribbonDrawable
-    _ribbonBackgroundColor = builder.ribbonBackgroundColor
-    _ribbonRadius = builder.ribbonRadius
-    _ribbonRotation = builder.ribbonRotation
-    _paddingLeft = builder.paddingLeft
-    _paddingTop = builder.paddingTop
-    _paddingRight = builder.paddingRight
-    _paddingBottom = builder.paddingBottom
+    ribbonDrawable = builder.ribbonDrawable
+    ribbonBackgroundColor = builder.ribbonBackgroundColor
+    ribbonRadius = builder.ribbonRadius
+    ribbonRotation = builder.ribbonRotation
+    paddingLeft = builder.paddingLeft
+    paddingTop = builder.paddingTop
+    paddingRight = builder.paddingRight
+    paddingBottom = builder.paddingBottom
     text = builder.text
     textSize = builder.textSize
     setTextColor(builder.textColor)
@@ -203,13 +148,13 @@ class RibbonView @JvmOverloads constructor(
   /** update [RibbonView] by attributes. */
   override fun updateRibbon() {
     setPadding(
-      paddingLeft.dp2px(resources),
-      paddingTop.dp2px(resources),
-      paddingRight.dp2px(resources),
-      paddingBottom.dp2px(resources)
+      paddingLeft.dp2px,
+      paddingTop.dp2px,
+      paddingRight.dp2px,
+      paddingBottom.dp2px
     )
     background = ribbonDrawable ?: GradientDrawable().apply {
-      cornerRadius = ribbonRadius.dp2px(resources).toFloat()
+      cornerRadius = ribbonRadius.dp2px.toFloat()
       setColor(ribbonBackgroundColor)
     }
   }
@@ -225,40 +170,40 @@ class RibbonView @JvmOverloads constructor(
   @RibbonDsl
   class Builder(val context: Context) {
 
-    @JvmField
+    @set:JvmSynthetic
     var ribbonDrawable: Drawable? = null
 
-    @JvmField @ColorInt
-    var ribbonBackgroundColor: Int = context.accentColor()
+    @set:JvmSynthetic @ColorInt
+    var ribbonBackgroundColor: Int = context.accentColor
 
-    @JvmField
+    @set:JvmSynthetic
     var ribbonRotation: Int = 0
 
-    @JvmField @Dp
+    @set:JvmSynthetic @Dp
     var ribbonRadius: Float = 10f
 
-    @JvmField @Dp
+    @set:JvmSynthetic @Dp
     var paddingLeft: Float = 8f
 
-    @JvmField @Dp
+    @set:JvmSynthetic @Dp
     var paddingTop: Float = 4f
 
-    @JvmField @Dp
+    @set:JvmSynthetic @Dp
     var paddingRight: Float = 8f
 
-    @JvmField @Dp
+    @set:JvmSynthetic @Dp
     var paddingBottom: Float = 4f
 
-    @JvmField
+    @set:JvmSynthetic
     var text: CharSequence = ""
 
-    @JvmField @ColorInt
+    @set:JvmSynthetic @ColorInt
     var textColor = Color.WHITE
 
-    @JvmField @Sp
+    @set:JvmSynthetic @Sp
     var textSize = 12f
 
-    @JvmField
+    @set:JvmSynthetic
     var textStyle = Typeface.NORMAL
 
     fun setRibbonDrawable(RibbonDrawable: Drawable?): Builder = apply {
