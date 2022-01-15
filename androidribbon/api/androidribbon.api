@@ -1,0 +1,180 @@
+public abstract interface annotation class com/skydoves/androidribbon/RibbonDsl : java/lang/annotation/Annotation {
+}
+
+public abstract interface class com/skydoves/androidribbon/RibbonInterface {
+	public abstract fun updateRibbon ()V
+}
+
+public final class com/skydoves/androidribbon/RibbonLayout : android/widget/FrameLayout, com/skydoves/androidribbon/RibbonInterface {
+	public fun <init> (Landroid/content/Context;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;I)V
+	public final fun getRibbonBottom ()Lcom/skydoves/androidribbon/RibbonInterface;
+	public final fun getRibbonBottomAlign ()I
+	public final fun getRibbonHeader ()Lcom/skydoves/androidribbon/RibbonInterface;
+	public final fun getRibbonHeaderAlign ()I
+	public final fun setRibbonBottom (Lcom/skydoves/androidribbon/RibbonInterface;)V
+	public final fun setRibbonBottomAlign (I)V
+	public final fun setRibbonHeader (Lcom/skydoves/androidribbon/RibbonInterface;)V
+	public final fun setRibbonHeaderAlign (I)V
+	public fun updateRibbon ()V
+}
+
+public final class com/skydoves/androidribbon/RibbonRecyclerAdapter : androidx/recyclerview/widget/RecyclerView$Adapter, com/skydoves/androidribbon/IRibbonList {
+	public fun <init> ()V
+	public fun addRibbon (ILcom/skydoves/androidribbon/RibbonView;)V
+	public fun addRibbon (Lcom/skydoves/androidribbon/RibbonView;)V
+	public fun addRibbonList (Ljava/util/List;)V
+	public fun clear ()V
+	public fun getItemCount ()I
+	public fun getRibbonView (I)Lcom/skydoves/androidribbon/RibbonView;
+	public fun getRibbonViews ()Ljava/util/List;
+	public synthetic fun onBindViewHolder (Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
+	public fun onBindViewHolder (Lcom/skydoves/androidribbon/RibbonRecyclerAdapter$RibbonRecyclerViewHolder;I)V
+	public synthetic fun onCreateViewHolder (Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
+	public fun onCreateViewHolder (Landroid/view/ViewGroup;I)Lcom/skydoves/androidribbon/RibbonRecyclerAdapter$RibbonRecyclerViewHolder;
+	public fun removeRibbon (I)V
+	public fun removeRibbon (Lcom/skydoves/androidribbon/RibbonView;)V
+}
+
+public final class com/skydoves/androidribbon/RibbonRecyclerAdapter$RibbonRecyclerViewHolder : androidx/recyclerview/widget/RecyclerView$ViewHolder {
+	public fun <init> (Lcom/skydoves/androidribbon/databinding/ItemRibbonAndroidribbonSkydovesBinding;)V
+	public final fun bind (Lcom/skydoves/androidribbon/RibbonView;)V
+}
+
+public final class com/skydoves/androidribbon/RibbonRecyclerView : androidx/recyclerview/widget/RecyclerView, com/skydoves/androidribbon/IRibbonList {
+	public fun <init> (Landroid/content/Context;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;I)V
+	public fun addRibbon (ILcom/skydoves/androidribbon/RibbonView;)V
+	public fun addRibbon (Lcom/skydoves/androidribbon/RibbonView;)V
+	public fun addRibbonList (Ljava/util/List;)V
+	public fun clear ()V
+	public fun getRibbonView (I)Lcom/skydoves/androidribbon/RibbonView;
+	public fun getRibbonViews ()Ljava/util/List;
+	public fun removeRibbon (I)V
+	public fun removeRibbon (Lcom/skydoves/androidribbon/RibbonView;)V
+}
+
+public final class com/skydoves/androidribbon/RibbonTagItemDecoration : androidx/recyclerview/widget/RecyclerView$ItemDecoration {
+	public fun <init> (II)V
+	public fun getItemOffsets (Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
+}
+
+public final class com/skydoves/androidribbon/RibbonView : androidx/appcompat/widget/AppCompatTextView, com/skydoves/androidribbon/RibbonInterface {
+	public fun <init> (Landroid/content/Context;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;I)V
+	public synthetic fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getPaddingBottom ()F
+	public final fun getPaddingLeft ()F
+	public final fun getPaddingRight ()F
+	public final fun getPaddingTop ()F
+	public final fun getRibbonBackgroundColor ()I
+	public final fun getRibbonDrawable ()Landroid/graphics/drawable/Drawable;
+	public final fun getRibbonRadius ()F
+	public final fun getRibbonRotation ()I
+	public final fun setPaddingBottom (F)V
+	public final fun setPaddingLeft (F)V
+	public final fun setPaddingRight (F)V
+	public final fun setPaddingTop (F)V
+	public final fun setRibbonBackgroundColor (I)V
+	public final fun setRibbonDrawable (Landroid/graphics/drawable/Drawable;)V
+	public final fun setRibbonRadius (F)V
+	public final fun setRibbonRotation (I)V
+	public fun updateRibbon ()V
+}
+
+public final class com/skydoves/androidribbon/RibbonView$Builder {
+	public fun <init> (Landroid/content/Context;)V
+	public final fun build ()Lcom/skydoves/androidribbon/RibbonView;
+	public final fun getContext ()Landroid/content/Context;
+	public final fun getPaddingBottom ()F
+	public final fun getPaddingLeft ()F
+	public final fun getPaddingRight ()F
+	public final fun getPaddingTop ()F
+	public final fun getRibbonBackgroundColor ()I
+	public final fun getRibbonDrawable ()Landroid/graphics/drawable/Drawable;
+	public final fun getRibbonRadius ()F
+	public final fun getRibbonRotation ()I
+	public final fun getText ()Ljava/lang/CharSequence;
+	public final fun getTextColor ()I
+	public final fun getTextSize ()F
+	public final fun getTextStyle ()I
+	public final fun setPaddingBottom (F)Lcom/skydoves/androidribbon/RibbonView$Builder;
+	public final synthetic fun setPaddingBottom (F)V
+	public final fun setPaddingLeft (F)Lcom/skydoves/androidribbon/RibbonView$Builder;
+	public final synthetic fun setPaddingLeft (F)V
+	public final fun setPaddingRight (F)Lcom/skydoves/androidribbon/RibbonView$Builder;
+	public final synthetic fun setPaddingRight (F)V
+	public final fun setPaddingTop (F)Lcom/skydoves/androidribbon/RibbonView$Builder;
+	public final synthetic fun setPaddingTop (F)V
+	public final fun setRibbonBackgroundColor (I)Lcom/skydoves/androidribbon/RibbonView$Builder;
+	public final synthetic fun setRibbonBackgroundColor (I)V
+	public final fun setRibbonBackgroundColorResource (I)Lcom/skydoves/androidribbon/RibbonView$Builder;
+	public final fun setRibbonDrawable (Landroid/graphics/drawable/Drawable;)Lcom/skydoves/androidribbon/RibbonView$Builder;
+	public final synthetic fun setRibbonDrawable (Landroid/graphics/drawable/Drawable;)V
+	public final fun setRibbonDrawableResource (I)Lcom/skydoves/androidribbon/RibbonView$Builder;
+	public final fun setRibbonRadius (F)Lcom/skydoves/androidribbon/RibbonView$Builder;
+	public final synthetic fun setRibbonRadius (F)V
+	public final fun setRibbonRotation (I)Lcom/skydoves/androidribbon/RibbonView$Builder;
+	public final synthetic fun setRibbonRotation (I)V
+	public final fun setText (Ljava/lang/CharSequence;)Lcom/skydoves/androidribbon/RibbonView$Builder;
+	public final synthetic fun setText (Ljava/lang/CharSequence;)V
+	public final fun setTextColor (I)Lcom/skydoves/androidribbon/RibbonView$Builder;
+	public final synthetic fun setTextColor (I)V
+	public final fun setTextSize (F)Lcom/skydoves/androidribbon/RibbonView$Builder;
+	public final synthetic fun setTextSize (F)V
+	public final fun setTextStyle (I)Lcom/skydoves/androidribbon/RibbonView$Builder;
+	public final synthetic fun setTextStyle (I)V
+}
+
+public final class com/skydoves/androidribbon/RibbonViewKt {
+	public static final fun ribbonView (Landroid/content/Context;Lkotlin/jvm/functions/Function1;)Lcom/skydoves/androidribbon/RibbonView;
+}
+
+public final class com/skydoves/androidribbon/ShimmerRibbonView : com/facebook/shimmer/ShimmerFrameLayout, com/skydoves/androidribbon/RibbonInterface {
+	public fun <init> (Landroid/content/Context;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;I)V
+	public final fun getFrameRotation ()I
+	public final fun getRibbon ()Lcom/skydoves/androidribbon/RibbonView;
+	public final fun getShimmer ()Lcom/facebook/shimmer/Shimmer;
+	public fun onLayout (ZIIII)V
+	public final fun setFrameRotation (I)V
+	public final fun setRibbon (Lcom/skydoves/androidribbon/RibbonView;)V
+	public final fun setShimmer (Lcom/facebook/shimmer/Shimmer;)V
+	public fun updateRibbon ()V
+}
+
+public final class com/skydoves/androidribbon/ShimmerRibbonView$Builder {
+	public field ribbon Lcom/skydoves/androidribbon/RibbonView;
+	public field shimmer Lcom/facebook/shimmer/Shimmer;
+	public fun <init> (Landroid/content/Context;)V
+	public final fun build ()Lcom/skydoves/androidribbon/ShimmerRibbonView;
+	public final fun getContext ()Landroid/content/Context;
+	public final fun setRibbonView (Lcom/skydoves/androidribbon/RibbonView;)Lcom/skydoves/androidribbon/ShimmerRibbonView$Builder;
+	public final fun setShimmer (Lcom/facebook/shimmer/Shimmer;)Lcom/skydoves/androidribbon/ShimmerRibbonView$Builder;
+}
+
+public final class com/skydoves/androidribbon/ShimmerRibbonViewKt {
+	public static final fun alphaShimmer (Lkotlin/jvm/functions/Function1;)Lcom/facebook/shimmer/Shimmer;
+	public static final fun colorShimmer (Lkotlin/jvm/functions/Function1;)Lcom/facebook/shimmer/Shimmer;
+	public static final fun shimmerRibbonView (Landroid/content/Context;Lkotlin/jvm/functions/Function1;)Lcom/skydoves/androidribbon/ShimmerRibbonView;
+}
+
+public abstract interface annotation class com/skydoves/androidribbon/annotations/Dp : java/lang/annotation/Annotation {
+}
+
+public abstract interface annotation class com/skydoves/androidribbon/annotations/Sp : java/lang/annotation/Annotation {
+}
+
+public final class com/skydoves/androidribbon/databinding/ItemRibbonAndroidribbonSkydovesBinding : androidx/viewbinding/ViewBinding {
+	public final field ribbonContainer Landroid/widget/LinearLayout;
+	public static fun bind (Landroid/view/View;)Lcom/skydoves/androidribbon/databinding/ItemRibbonAndroidribbonSkydovesBinding;
+	public synthetic fun getRoot ()Landroid/view/View;
+	public fun getRoot ()Landroid/widget/LinearLayout;
+	public static fun inflate (Landroid/view/LayoutInflater;)Lcom/skydoves/androidribbon/databinding/ItemRibbonAndroidribbonSkydovesBinding;
+	public static fun inflate (Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Z)Lcom/skydoves/androidribbon/databinding/ItemRibbonAndroidribbonSkydovesBinding;
+}
+
