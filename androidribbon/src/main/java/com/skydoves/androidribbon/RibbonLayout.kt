@@ -23,6 +23,7 @@ import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import com.skydoves.androidribbon.internal.viewProperty
 
 /**
  * RibbonLayout has header and bottom align ribbons.
@@ -31,26 +32,13 @@ import android.widget.FrameLayout
 @Suppress("MemberVisibilityCanBePrivate", "unused")
 class RibbonLayout : FrameLayout, RibbonInterface {
 
-  var ribbonHeaderAlign: Int = Gravity.START
-    set(value) {
-      field = value
-      updateRibbon()
-    }
-  var ribbonBottomAlign: Int = Gravity.CENTER
-    set(value) {
-      field = value
-      updateRibbon()
-    }
-  var ribbonHeader: RibbonInterface = RibbonView(context)
-    set(value) {
-      field = value
-      updateRibbon()
-    }
-  var ribbonBottom: RibbonInterface = RibbonView(context)
-    set(value) {
-      field = value
-      updateRibbon()
-    }
+  var ribbonHeaderAlign: Int by viewProperty(Gravity.START)
+
+  var ribbonBottomAlign: Int by viewProperty(Gravity.CENTER)
+
+  var ribbonHeader: RibbonInterface by viewProperty(RibbonView(context))
+
+  var ribbonBottom: RibbonInterface by viewProperty(RibbonView(context))
 
   constructor(context: Context) : super(context)
 

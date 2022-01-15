@@ -76,7 +76,7 @@ class RibbonRecyclerView : RecyclerView, IRibbonList {
 
   private fun onCreate() {
     layoutManager = LinearLayoutManager(context, orientation, false)
-    addItemDecoration(RibbonTagItemDecoration(space.dp2px(resources), orientation))
+    addItemDecoration(RibbonTagItemDecoration(space.dp2px, orientation))
     adapter = ribbonAdapter
   }
 
