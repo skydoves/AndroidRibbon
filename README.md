@@ -33,7 +33,7 @@ allprojects {
 Next, add the dependency below to your **module**'s `build.gradle` file:
 ```gradle
 dependencies {  
-    implementation "com.github.skydoves:androidribbon:1.0.3"
+    implementation "com.github.skydoves:androidribbon:1.0.4"
 }
 ```
 
